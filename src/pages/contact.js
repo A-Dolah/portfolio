@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import Layout from "../components/Layout"
 
 const ContactPage = () => {
@@ -7,10 +6,10 @@ const ContactPage = () => {
     <Layout>
       <h1>Contact Page</h1>
       <p>Phone: 050505050</p>
-      <p>email: adamdolah@gmail.comç</p>
+      <p>email: adamdolah@gmail.com</p>
       <p>
         Go to google!{" "}
-        <a href="https://google.com" target="_blank">
+        <a href="https://google.com" target="_blank" rel="noopener noreferrer">
           Google
         </a>
       </p>
