@@ -1,3 +1,20 @@
 .letter {
   color: blue;
 }
+
+.blinking {
+  animation: blinkingText 0.8s infinite;
+}
+@keyframes blinkingText {
+  0% {
+    color: blue;
+  }
+
+  50% {
+    color: transparent;
+  }
+
+  100% {
+    color: blue;
+  }
+}
