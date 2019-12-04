@@ -1,5 +1,7 @@
+$break-small: 400px;
+$break-large: 750px;
+
 .section {
-  padding-top: 20vh;
   h1 {
     font-size: 1.7rem;
     margin-bottom: 5vh;
@@ -26,5 +28,10 @@
     100% {
       color: #000000;
     }
+  }
+}
+@media only screen and (min-width: $break-small) {
+  .section {
+    padding-top: 20vh;
   }
 }

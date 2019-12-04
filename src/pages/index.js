@@ -5,41 +5,23 @@ import Head from "../components/Head"
 import indexStyles from "./index.module.scss"
 
 const IndexPage = () => {
-  const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([
-    {
-      letter: "",
-      index: 0,
-      printTime: 0,
-    },
-  ])
-  const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([
-    {
-      letter: "",
-      index: 0,
-      printTime: 0,
-    },
-  ])
+  const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
+  const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([])
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
-    "I'm a software developer and bootcamp instructor from Sweden, currently working from Stockholm. I hope you'll find something interesting while visiting :)!"
+    "I'm a software developer from Sweden, currently working in Stockholm. I hope you'll find something interesting while visiting :)!"
 
   const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
 
   const printFunction = (stringToPrint, state, setStateFunction) => {
     const lettersToPrint = stringToPrint.split("")
-    const indexOfNextLetter = state[state.length - 1].index
+    const indexOfNextLetter = state.length - 1
     const letterToPrint = lettersToPrint.slice(
       indexOfNextLetter,
       indexOfNextLetter + 1
     )
-    setStateFunction([
-      ...state,
-      {
-        letter: letterToPrint,
-        index: state.length,
-      },
-    ])
+    setStateFunction([...state, letterToPrint])
   }
 
   const timerFunc = (headerString, paragraphString) => {
@@ -59,16 +41,13 @@ const IndexPage = () => {
           )
         }
       },
-      visibleHeaderLetters[visibleHeaderLetters.length - 1].index ===
-        headerString.length && visibleParagraphLetters.length === 1
-        ? 1000
+      visibleHeaderLetters.length - 1 === headerString.length &&
+        visibleParagraphLetters.length === 1
+        ? 900
         : randomNumberInRange(30, 100)
     )
 
-    if (
-      visibleParagraphLetters[visibleParagraphLetters.length - 1].index ===
-      paragraphString.length
-    ) {
+    if (visibleParagraphLetters.length - 1 === paragraphString.length) {
       clearInterval(timer)
     }
   }
@@ -82,7 +61,7 @@ const IndexPage = () => {
         <h1>
           {visibleHeaderLetters.length > 0 &&
             visibleHeaderLetters.map((letter, index) => (
-              <span key={index}>{letter.letter}</span>
+              <span key={index}>{letter}</span>
             ))}
           {visibleParagraphLetters.length < 2 && (
             <span className={indexStyles.blinking}> |</span>
@@ -91,7 +70,7 @@ const IndexPage = () => {
         <p>
           {visibleParagraphLetters.length > 0 &&
             visibleParagraphLetters.map((letter, index) => (
-              <span key={index}>{letter.letter}</span>
+              <span key={index}>{letter}</span>
             ))}
           {visibleParagraphLetters.length > 1 && (
             <span className={indexStyles.blinkingLine}> |</span>
