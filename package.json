@@ -27,7 +27,10 @@
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "typeface-arvo": "0.0.72",
+    "typeface-crimson-text": "0.0.72",
+    "typeface-oswald": "0.0.75"
   },
   "devDependencies": {
     "env-cmd": "^10.0.1",

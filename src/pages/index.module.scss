@@ -1,20 +1,30 @@
-.letter {
-  color: blue;
-}
-
-.blinking {
-  animation: blinkingText 0.8s infinite;
-}
-@keyframes blinkingText {
-  0% {
-    color: blue;
+.section {
+  padding-top: 20vh;
+  h1 {
+    font-size: 1.7rem;
+    margin-bottom: 5vh;
   }
-
-  50% {
-    color: transparent;
+  p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
   }
+  .blinkingLine {
+    animation: blinkingText 1s infinite;
+    font-size: 1.2rem;
+    font-weight: 100;
+  }
+  @keyframes blinkingText {
+    0% {
+      color: #000000;
+    }
 
-  100% {
-    color: blue;
+    50% {
+      color: transparent;
+    }
+
+    100% {
+      color: #000000;
+    }
   }
 }

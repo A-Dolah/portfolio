@@ -20,7 +20,9 @@ const Header = () => {
           {data.site.siteMetadata.title}
         </Link>
       </h1>
-      <nav>
+      <nav className={headerStyles.navContainer}>
+        <label htmlFor="toggle">&#9776;</label>
+        <input type="checkbox" id="toggle" />
         <ul className={headerStyles.navList}>
           <li>
             <Link

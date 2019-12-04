@@ -1,6 +1,7 @@
 import React from "react"
 import Header from "./Header"
 import Footer from "./Footer"
+import "typeface-crimson-text"
 import "../styles/index.scss"
 import layoutStyles from "./layout.module.scss"
 

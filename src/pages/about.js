@@ -9,9 +9,9 @@ const AboutPage = () => {
       <Head title="About" />
 
       <h1>About page</h1>
-      <p>this will be the about</p>
+      <p>This will be an about page</p>
       <p>
-        Need a instructor? <Link to="/contact">Contact me</Link>
+        Need a developer? <Link to="/contact">Contact me</Link>
       </p>
     </Layout>
   )

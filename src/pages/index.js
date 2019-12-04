@@ -20,9 +20,9 @@ const IndexPage = () => {
     },
   ])
 
-  const headerString = "Hi, I'm Adam. Welcome to my site! I'm glad you're here!"
+  const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
-    "I'm a software developer and bootcamp instructor in Stockholm. Please get in touch!"
+    "I'm a software developer and bootcamp instructor from Sweden, currently working from Stockholm. I hope you'll find something interesting while visiting :)!"
 
   const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
 
@@ -43,21 +43,27 @@ const IndexPage = () => {
   }
 
   const timerFunc = (headerString, paragraphString) => {
-    const timer = setTimeout(() => {
-      if (visibleHeaderLetters.length <= headerString.length) {
-        printFunction(
-          headerString,
-          visibleHeaderLetters,
-          setVisibleHeaderLetters
-        )
-      } else if (visibleParagraphLetters.length <= paragraphString.length) {
-        printFunction(
-          paragraphString,
-          visibleParagraphLetters,
-          setVisibleParagraphLetters
-        )
-      }
-    }, randomNumberInRange(10, 130))
+    const timer = setTimeout(
+      () => {
+        if (visibleHeaderLetters.length <= headerString.length) {
+          printFunction(
+            headerString,
+            visibleHeaderLetters,
+            setVisibleHeaderLetters
+          )
+        } else if (visibleParagraphLetters.length <= paragraphString.length) {
+          printFunction(
+            paragraphString,
+            visibleParagraphLetters,
+            setVisibleParagraphLetters
+          )
+        }
+      },
+      visibleHeaderLetters[visibleHeaderLetters.length - 1].index ===
+        headerString.length && visibleParagraphLetters.length === 1
+        ? 1000
+        : randomNumberInRange(30, 100)
+    )
 
     if (
       visibleParagraphLetters[visibleParagraphLetters.length - 1].index ===
@@ -72,24 +78,26 @@ const IndexPage = () => {
   return (
     <Layout>
       <Head title="Home" />
-      <h1 className={indexStyles.letter}>
-        {visibleHeaderLetters.length > 0 &&
-          visibleHeaderLetters.map((letter, index) => (
-            <span key={index}>{letter.letter}</span>
-          ))}
-        {visibleParagraphLetters.length < 2 && (
-          <span className={indexStyles.blinking}> |</span>
-        )}
-      </h1>
-      <p>
-        {visibleParagraphLetters.length > 0 &&
-          visibleParagraphLetters.map((letter, index) => (
-            <span key={index}>{letter.letter}</span>
-          ))}
-        {visibleParagraphLetters.length > 1 && (
-          <span className={indexStyles.blinking}> |</span>
-        )}
-      </p>
+      <section className={indexStyles.section}>
+        <h1>
+          {visibleHeaderLetters.length > 0 &&
+            visibleHeaderLetters.map((letter, index) => (
+              <span key={index}>{letter.letter}</span>
+            ))}
+          {visibleParagraphLetters.length < 2 && (
+            <span className={indexStyles.blinking}> |</span>
+          )}
+        </h1>
+        <p>
+          {visibleParagraphLetters.length > 0 &&
+            visibleParagraphLetters.map((letter, index) => (
+              <span key={index}>{letter.letter}</span>
+            ))}
+          {visibleParagraphLetters.length > 1 && (
+            <span className={indexStyles.blinkingLine}> |</span>
+          )}
+        </p>
+      </section>
     </Layout>
   )
 }
