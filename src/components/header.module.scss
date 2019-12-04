@@ -1,6 +1,13 @@
 $break-small: 400px;
 $break-large: 750px;
 
+$color-darkred: #ce6a6b;
+$color-lightred: #ebaca2;
+$color-lightgreen: #bed3c3;
+$color-turquoise: #4a919e;
+$color-darkpurple: #212e53;
+$color-white: #f9f9f9f9;
+
 .header {
   display: flex;
   flex-direction: column;
@@ -13,10 +20,13 @@ $break-large: 750px;
 }
 
 .title {
-  color: #000000;
+  color: $color-white;
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
+  @media screen and (min-width: $break-large) {
+    padding-left: 2rem;
+  }
 }
 
 .nav-container {
@@ -41,7 +51,7 @@ $break-large: 750px;
   }
 
   .nav-item {
-    color: #999999;
+    color: $color-white;
     font-size: 0.9rem;
     margin-right: 1.8rem;
     text-decoration: none;
@@ -49,11 +59,11 @@ $break-large: 750px;
   }
 
   .nav-item:hover {
-    color: #666666;
+    color: $color-darkpurple;
   }
 
   .active-nav-item {
-    color: #333333;
+    color: $color-turquoise;
   }
 
   @media only screen and (max-width: $break-small) {

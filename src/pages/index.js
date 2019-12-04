@@ -7,10 +7,11 @@ import indexStyles from "./index.module.scss"
 const IndexPage = () => {
   const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
   const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([])
+  const [visitorInput, setVisitorInput] = useState("")
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
-    "I'm a software developer from Sweden, currently working in Stockholm. I hope you'll find something interesting while visiting :)!"
+    "I'm a software developer from Sweden. It's good to have you here. May I ask what brings you :)?"
 
   const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
 
@@ -44,12 +45,16 @@ const IndexPage = () => {
       visibleHeaderLetters.length - 1 === headerString.length &&
         visibleParagraphLetters.length === 1
         ? 900
-        : randomNumberInRange(30, 100)
+        : randomNumberInRange(20, 70)
     )
 
     if (visibleParagraphLetters.length - 1 === paragraphString.length) {
       clearInterval(timer)
     }
+  }
+
+  const onChange = e => {
+    setVisitorInput(e.target.value)
   }
 
   timerFunc(headerString, paragraphString)
@@ -72,10 +77,17 @@ const IndexPage = () => {
             visibleParagraphLetters.map((letter, index) => (
               <span key={index}>{letter}</span>
             ))}
-          {visibleParagraphLetters.length > 1 && (
-            <span className={indexStyles.blinkingLine}> |</span>
-          )}
+          {visibleParagraphLetters.length > 1 &&
+            visibleParagraphLetters.length < paragraphString.length && (
+              <span className={indexStyles.blinking}> |</span>
+            )}
         </p>
+        <input
+          type="text"
+          className={indexStyles.inputField}
+          autoFocus
+          onChange={onChange}
+        />
       </section>
     </Layout>
   )

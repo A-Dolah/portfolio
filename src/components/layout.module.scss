@@ -1,6 +1,13 @@
+$color-darkred: #ce6a6b;
+$color-lightred: #ebaca2;
+$color-lightgreen: #bed3c3;
+$color-turquoise: #4a919e;
+$color-darkpurple: #212e53;
+$color-white: #f9f9f9f9;
+
 .container {
   margin: 0 auto;
-  max-width: 750px;
+  max-width: 900px;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -8,5 +15,7 @@
 }
 
 .content {
+  background-color: $color-darkred;
   flex-grow: 1;
+  padding-left: 2rem;
 }
