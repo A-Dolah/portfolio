@@ -7,11 +7,10 @@ import indexStyles from "./index.module.scss"
 const IndexPage = () => {
   const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
   const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([])
-  const [visitorInput, setVisitorInput] = useState("")
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
-    "I'm a software developer from Sweden. It's good to have you here. May I ask what brings you :)?"
+    "I'm a software developer from Sweden. Here I post things I've written, things I read and things I made - I hope you'll find it interesting!"
 
   const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
 
@@ -53,10 +52,6 @@ const IndexPage = () => {
     }
   }
 
-  const onChange = e => {
-    setVisitorInput(e.target.value)
-  }
-
   timerFunc(headerString, paragraphString)
 
   return (
@@ -82,12 +77,6 @@ const IndexPage = () => {
               <span className={indexStyles.blinking}> |</span>
             )}
         </p>
-        <input
-          type="text"
-          className={indexStyles.inputField}
-          autoFocus
-          onChange={onChange}
-        />
       </section>
     </Layout>
   )

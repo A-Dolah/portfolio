@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Head from "../components/Head"
+import ContentHeader from "../components/ContentHeader"
 
 import blogStyles from "./blog.module.scss"
 
@@ -19,11 +20,14 @@ const BlogPage = () => {
       }
     }
   `)
+  const title = "A place where I collect things on my mind"
+  const paragraph =
+    "Here you'll find anything from writing about code to thoughts about life"
   return (
     <Layout>
       <Head title="Blog" />
 
-      <h1>Blog</h1>
+      <ContentHeader title={title} paragraph={paragraph} />
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map(edge => {
           return (

@@ -11,26 +11,18 @@ $color-white: #f9f9f9f9;
 .section {
   position: relative;
   h1,
-  p,
-  .input-field {
+  p {
     color: $color-white;
   }
   h1 {
-    font-size: 1.7rem;
+    font-size: 3rem;
     margin-bottom: 5vh;
   }
   p {
-    font-size: 1.1rem;
+    font-size: 2rem;
     font-weight: 500;
-    line-height: 1.5rem;
+    line-height: 3rem;
     margin-bottom: 3vh;
-  }
-
-  .input-field {
-    background-color: $color-darkred;
-    border: none;
-    outline: none;
-    width: 20vw;
   }
 
   .blinking {
@@ -50,11 +42,5 @@ $color-white: #f9f9f9f9;
     100% {
       color: $color-white;
     }
-  }
-}
-
-@media only screen and (min-width: $break-small) {
-  .section {
-    padding-top: 20vh;
   }
 }

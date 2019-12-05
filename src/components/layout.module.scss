@@ -5,17 +5,30 @@ $color-turquoise: #4a919e;
 $color-darkpurple: #212e53;
 $color-white: #f9f9f9f9;
 
+.background {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .container {
-  margin: 0 auto;
-  max-width: 900px;
-  padding: 1rem;
+  padding: 0 2rem;
+  background-color: $color-darkpurple;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: 2.5vh auto;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  align-items: space-between;
+  height: 95vh;
+  overflow: scroll;
 }
 
 .content {
-  background-color: $color-darkred;
   flex-grow: 1;
-  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
