@@ -11,7 +11,7 @@ import layoutStyles from "./layout.module.scss"
 const Layout = props => {
   const data = useStaticQuery(graphql`
     query Images {
-      image: file(relativePath: { eq: "wave.jpg" }) {
+      image: file(relativePath: { eq: "waven.jpg" }) {
         id
         childImageSharp {
           fixed(width: 1600) {
