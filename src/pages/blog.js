@@ -36,7 +36,6 @@ const BlogPage = () => {
   return (
     <Layout>
       <Head title="Blog" />
-
       <ContentHeader title={title} paragraph={paragraph} />
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge, index) => {
