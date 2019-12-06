@@ -26,9 +26,6 @@ $color-white: #f9f9f9f9;
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
-  @media screen and (min-width: $break-large) {
-    padding-left: 2rem;
-  }
 }
 
 .nav-container {
@@ -38,7 +35,7 @@ $color-white: #f9f9f9f9;
   align-items: center;
 
   label {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     display: none;
   }
 
@@ -69,10 +66,13 @@ $color-white: #f9f9f9f9;
   }
 
   @media only screen and (max-width: $break-small) {
+    margin-top: 0;
+
     label {
       display: block;
       cursor: pointer;
     }
+
     .nav-list {
       height: 0;
       flex-direction: column;
@@ -80,11 +80,7 @@ $color-white: #f9f9f9f9;
       align-items: center;
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0s, opacity 0.5s linear, height 0.2s linear;
-    }
-
-    .nav-item {
-      margin-right: 0;
+      transition: visibility 0s, opacity 1.5s linear, height 0.2s linear;
     }
 
     input:checked + .nav-list {
@@ -92,6 +88,10 @@ $color-white: #f9f9f9f9;
       visibility: visible;
       opacity: 1;
       height: 20vh;
+    }
+
+    input:checked + label {
+      color: $color-turquoise;
     }
   }
 }

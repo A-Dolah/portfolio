@@ -14,24 +14,29 @@ $color-white: #f9f9f9f9;
   margin: 1rem 0;
 
   a {
-    background: #f4f4f4;
-    color: #000000;
+    background: $color-lightgreen;
+    opacity: 1;
+    color: $color-white;
     display: block;
     padding: 1rem;
     text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   a:hover {
-    background: #e4e4e4;
+    background: $color-lightred;
   }
 
   h2 {
+    font-size: 1.5rem;
     margin-bottom: 0;
   }
 
   p {
     color: #777777;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-style: italic;
   }
 }

@@ -10,24 +10,35 @@ $color-white: #f9f9f9f9;
 
 .section {
   position: relative;
+  margin-bottom: 4vh;
   h1,
   p {
     color: $color-white;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 5vh;
   }
   p {
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 500;
-    line-height: 3rem;
-    margin-bottom: 3vh;
+    line-height: 2.2rem;
+    margin-bottom: 2vh;
+  }
+
+  @media only screen and (min-width: $break-small) {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
   }
 
   .blinking {
     animation: blinkingText 1s infinite;
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     font-weight: 100;
     color: $color-white;
   }

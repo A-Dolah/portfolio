@@ -72,10 +72,9 @@ const IndexPage = () => {
             visibleParagraphLetters.map((letter, index) => (
               <span key={index}>{letter}</span>
             ))}
-          {visibleParagraphLetters.length > 1 &&
-            visibleParagraphLetters.length < paragraphString.length && (
-              <span className={indexStyles.blinking}> |</span>
-            )}
+          {visibleParagraphLetters.length > 1 && (
+            <span className={indexStyles.blinking}> |</span>
+          )}
         </p>
       </section>
     </Layout>

@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { graphql, useStaticQuery, Link } from "gatsby"
+import Img from "gatsby-image"
 import Head from "../components/Head"
 import ContentHeader from "../components/ContentHeader"
 
@@ -15,11 +16,20 @@ const BlogPage = () => {
             title
             slug
             publishedDate(formatString: "MMMM Do, YYYY")
+            image {
+              fixed(width: 100, height: 100) {
+                width
+                height
+                src
+                srcSet
+              }
+            }
           }
         }
       }
     }
   `)
+
   const title = "A place where I collect things on my mind"
   const paragraph =
     "Here you'll find anything from writing about code to thoughts about life"
@@ -29,12 +39,17 @@ const BlogPage = () => {
 
       <ContentHeader title={title} paragraph={paragraph} />
       <ol className={blogStyles.posts}>
-        {data.allContentfulBlogPost.edges.map(edge => {
+        {data.allContentfulBlogPost.edges.map((edge, index) => {
           return (
-            <li className={blogStyles.post}>
+            <li key={index} className={blogStyles.post}>
               <Link to={`/blog/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-                <p>{edge.node.publishedDate}</p>
+                <aside>
+                  <h2>{edge.node.title}</h2>
+                  <p>{edge.node.publishedDate}</p>
+                </aside>
+                {edge.node.image && (
+                  <Img fixed={edge.node.image.fixed} alt="thumbnail" />
+                )}
               </Link>
             </li>
           )

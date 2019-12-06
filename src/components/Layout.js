@@ -20,7 +20,6 @@ const Layout = props => {
       }
     }
   `)
-  console.log(data)
   return (
     <div className={layoutStyles.background}>
       <Img fixed={data.image.childImageSharp.fixed} alt="wave image" />}

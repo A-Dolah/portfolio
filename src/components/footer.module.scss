@@ -8,5 +8,16 @@ $color-white: #f9f9f9f9;
 .footer {
   text-align: center;
   color: $color-lightred;
-  margin-bottom: 0.5rem;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: center;
+  li {
+    list-style: none;
+    margin: 1vh 1.5vw;
+  }
+  img {
+    height: 30px;
+  }
 }
