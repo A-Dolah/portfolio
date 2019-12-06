@@ -3,9 +3,10 @@ import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Head from "../components/Head"
+import ContentHeader from "../components/ContentHeader"
 import Pager from "../components/Pager"
 
-import blogStyles from "../paused/blog.module.scss"
+import blogStyles from "./blogList.module.scss"
 
 export const blogListQuery = graphql`
   query($skip: Int!, $limit: Int!) {
@@ -34,9 +35,14 @@ export const blogListQuery = graphql`
 `
 
 const blogList = ({ data, pageContext }) => {
+  const title = "A place where I collect things on my mind"
+  const paragraph =
+    "Here you'll find anything from writing about code to thoughts about life"
+
   return (
     <Layout>
       <Head title="Blog" />
+      <ContentHeader title={title} paragraph={paragraph} />
 
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge, index) => {

@@ -1,17 +1,19 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import pagerStyles from "./pager.module.scss"
+
 const Pager = ({ pageContext }) => {
   const { previousPagePath, nextPagePath } = pageContext
   return (
-    <div>
+    <div className={pagerStyles.container}>
       {previousPagePath && (
-        <span>
+        <span className={pagerStyles.span}>
           <Link to={previousPagePath}>Previous</Link>
         </span>
       )}
       {nextPagePath && (
-        <span>
+        <span className={pagerStyles.span}>
           <Link to={nextPagePath}>Next</Link>
         </span>
       )}
