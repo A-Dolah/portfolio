@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Head from "../components/Head"
 import Pager from "../components/Pager"
 
-import blogStyles from "../pages/blog.module.scss"
+import blogStyles from "../paused/blog.module.scss"
 
 export const blogListQuery = graphql`
   query($skip: Int!, $limit: Int!) {
