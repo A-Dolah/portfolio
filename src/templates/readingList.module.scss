@@ -1,0 +1,42 @@
+$color-darkred: #ce6a6b;
+$color-lightred: #ebaca2;
+$color-lightgreen: #bed3c3;
+$color-turquoise: #4a919e;
+$color-darkpurple: #212e53;
+$color-white: #f9f9f9f9;
+
+.posts {
+  list-style-type: none;
+  margin: 0;
+}
+
+.post {
+  margin: 1rem 0;
+
+  a {
+    background: $color-lightgreen;
+    opacity: 1;
+    color: $color-white;
+    display: block;
+    padding: 1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a:hover {
+    background: $color-lightred;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  p {
+    color: #777777;
+    font-size: 1rem;
+    font-style: italic;
+  }
+}
