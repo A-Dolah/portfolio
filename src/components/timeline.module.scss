@@ -1,0 +1,29 @@
+$break-small: 400px;
+$break-large: 750px;
+
+$color-darkred: #ce6a6b;
+$color-lightred: #ebaca2;
+$color-lightgreen: #bed3c3;
+$color-turquoise: #4a919e;
+$color-darkpurple: #212e53;
+$color-white: #f9f9f9f9;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  div {
+    height: 10vh;
+  }
+  div:nth-child(odd) {
+    border-left: 1px solid red;
+    align-self: flex-end;
+    padding-right: 1px;
+    width: 50%;
+  }
+
+  div:nth-child(even) {
+    border-right: 1px solid red;
+    padding-right: -1px;
+    width: calc(50% + 1px);
+  }
+}

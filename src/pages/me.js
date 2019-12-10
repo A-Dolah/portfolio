@@ -2,6 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import Head from "../components/Head"
 import ContentHeader from "../components/ContentHeader"
+import Timeline from "../components/Timeline"
 
 import meStyles from "./me.module.scss"
 
@@ -11,8 +12,9 @@ const AboutPage = () => {
   return (
     <Layout>
       <Head title="About" />
-      <section className={meStyles.sectionOne}>
+      <section className={meStyles.timeline}>
         <ContentHeader title={title} paragraph={paragraph} />
+        <Timeline />
       </section>
       <section className={meStyles.sectionTwo}>
         <div className={meStyles.one}>
