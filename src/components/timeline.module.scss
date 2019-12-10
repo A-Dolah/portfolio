@@ -11,19 +11,48 @@ $color-white: #f9f9f9f9;
 .section {
   display: flex;
   flex-direction: column;
-  div {
-    height: 10vh;
+  height: auto;
+  .div-container {
+    position: relative;
+    height: 80vh;
+    color: $color-white;
+    padding-left: 2vw;
+    font-weight: 200;
   }
-  div:nth-child(odd) {
+  .div-container:nth-child(odd) {
     border-left: 1px solid red;
     align-self: flex-end;
     padding-right: 1px;
     width: 50%;
+    .circle {
+      left: -1vh;
+    }
   }
 
-  div:nth-child(even) {
+  .div-container:nth-child(even) {
     border-right: 1px solid red;
     padding-right: -1px;
     width: calc(50% + 1px);
+    .circle {
+      right: -1vh;
+    }
+  }
+
+  .circle {
+    position: absolute;
+    width: 2vh;
+    height: 2vh;
+    border-radius: 50%;
+    border: 1px solid green;
+    bottom: 0;
+  }
+
+  .show {
+    background-color: rgb(101, 167, 101);
+  }
+
+  .circle:nth-child(even) {
+    left: 10vh;
+    right: 10vh;
   }
 }

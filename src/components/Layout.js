@@ -23,7 +23,7 @@ const Layout = props => {
   return (
     <div className={layoutStyles.background}>
       <Img fixed={data.image.childImageSharp.fixed} alt="wave image" />}
-      <div className={layoutStyles.container}>
+      <div className={`${layoutStyles.container} container`}>
         <Header />
         <div className={layoutStyles.content}>{props.children}</div>
         <Footer />
