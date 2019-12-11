@@ -1,3 +1,6 @@
+$break-small: 400px;
+$break-large: 750px;
+
 $color-darkred: #ce6a6b;
 $color-lightred: #ebaca2;
 $color-lightgreen: #bed3c3;
@@ -8,35 +11,56 @@ $color-white: #f9f9f9f9;
 .posts {
   list-style-type: none;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .post {
-  margin: 1rem 0;
-
+  margin: 2rem 0;
   a {
     background: $color-lightgreen;
     opacity: 1;
     color: $color-white;
     display: block;
     padding: 1rem;
+    height: 132px;
     text-decoration: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
   }
-
   a:hover {
     background: $color-lightred;
   }
 
+  .aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 0;
   }
-
   p {
-    color: #777777;
-    font-size: 1rem;
+    color: $color-darkpurple;
+    font-size: 0.7rem;
     font-style: italic;
   }
+
+  @media screen and (min-width: $break-small) {
+    width: 80%;
+    margin: 0.9rem 0;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+.image {
+  margin-left: 8vw;
 }

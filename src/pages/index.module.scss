@@ -9,24 +9,34 @@ $color-darkpurple: #212e53;
 $color-white: #f9f9f9f9;
 
 .section {
-  position: relative;
   margin-bottom: 4vh;
+  padding: 0 2vw;
+  margin-top: 3vh;
   h1,
   p {
     color: $color-white;
   }
   h1 {
-    font-size: 2.2rem;
-    margin-bottom: 5vh;
+    font-size: 1.8rem;
+    margin-bottom: 3vh;
   }
   p {
-    font-size: 1.7rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    line-height: 2.2rem;
     margin-bottom: 2vh;
   }
 
+  .blinking {
+    animation: blinkingText 1s infinite;
+    font-size: 1.1rem;
+    font-weight: 100;
+    color: $color-white;
+  }
+
   @media only screen and (min-width: $break-small) {
+    padding: 0 5vw;
+    margin-top: 20vh;
+
     h1 {
       font-size: 3rem;
     }
@@ -34,13 +44,9 @@ $color-white: #f9f9f9f9;
       font-size: 2rem;
       line-height: 3rem;
     }
-  }
-
-  .blinking {
-    animation: blinkingText 1s infinite;
-    font-size: 2.5rem;
-    font-weight: 100;
-    color: $color-white;
+    .blinking {
+      font-size: 1.8rem;
+    }
   }
 
   @keyframes blinkingText {

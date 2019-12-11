@@ -13,7 +13,7 @@ $color-white: #f9f9f9f9;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem 0 0 0;
   @media screen and (min-width: $break-large) {
     flex-direction: row;
     justify-content: space-between;
@@ -37,6 +37,8 @@ $color-white: #f9f9f9f9;
   label {
     font-size: 2.5rem;
     display: none;
+    color: $color-lightred;
+    outline-color: transparent;
   }
 
   input {
@@ -51,10 +53,9 @@ $color-white: #f9f9f9f9;
 
   .nav-item {
     color: $color-white;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin: 0 0.9rem;
     text-decoration: none;
-    font-style: italic;
   }
 
   .nav-item:hover {
@@ -73,6 +74,10 @@ $color-white: #f9f9f9f9;
       cursor: pointer;
     }
 
+    .nav-item {
+      font-size: 0.8rem;
+    }
+
     .nav-list {
       height: 0;
       flex-direction: column;
@@ -80,7 +85,7 @@ $color-white: #f9f9f9f9;
       align-items: center;
       visibility: hidden;
       opacity: 0;
-      transition: visibility 0s, opacity 1.5s linear, height 0.2s linear;
+      transition: visibility 0s, opacity 2s linear, height 0.2s linear;
     }
 
     input:checked + .nav-list {

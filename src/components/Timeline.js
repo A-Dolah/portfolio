@@ -4,8 +4,8 @@ import timelineStyles from "./timeline.module.scss"
 
 const Timeline = () => {
   const [visible, setVisible] = useState({
-    one: false,
-    two: false,
+    one: true,
+    two: true,
     three: false,
     four: false,
     five: false,

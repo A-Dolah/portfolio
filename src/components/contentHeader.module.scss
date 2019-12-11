@@ -1,3 +1,6 @@
+$break-small: 400px;
+$break-large: 750px;
+
 $color-darkred: #ce6a6b;
 $color-lightred: #ebaca2;
 $color-lightgreen: #bed3c3;
@@ -5,21 +8,44 @@ $color-turquoise: #4a919e;
 $color-darkpurple: #212e53;
 $color-white: #f9f9f9f9;
 
+.header {
+  margin-top: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .title,
 .paragraph {
   color: $color-white;
   display: inline-block;
+  text-align: center;
 }
 .title {
-  font-size: 2rem;
+  font-size: 1.4rem;
   margin-bottom: 2vh;
 }
 .paragraph {
-  font-size: 1.1rem;
-  font-weight: 500;
-  line-height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.4rem;
   margin-bottom: 3vh;
   padding-bottom: 1vh;
-  padding-right: 5vw;
   border-bottom: 1px solid $color-turquoise;
+}
+
+@media screen and (min-width: $break-small) {
+  .header {
+    margin-top: 5vh;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .paragraph {
+    line-height: 2rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
 }

@@ -35,8 +35,8 @@ export const blogListQuery = graphql`
 `
 
 const readingList = ({ data, pageContext }) => {
-  const title = "These are things written by others I find very useful"
-  const paragraph = "Hopefully you do too!"
+  const title = "Things others made"
+  const paragraph = "I found them very useful, and hope you do too!"
 
   return (
     <Layout>
@@ -48,12 +48,16 @@ const readingList = ({ data, pageContext }) => {
           return (
             <li key={index} className={readingStyles.post}>
               <a href={edge.node.link} target="_blank">
-                <aside>
+                <aside className={readingStyles.aside}>
                   <h2>{edge.node.article}</h2>
                   <p>{edge.node.linkedDate}</p>
                 </aside>
                 {edge.node.thumbnail && (
-                  <Img fixed={edge.node.thumbnail.fixed} alt="thumbnail" />
+                  <Img
+                    fixed={edge.node.thumbnail.fixed}
+                    alt="thumbnail"
+                    className={readingStyles.image}
+                  />
                 )}
               </a>
             </li>

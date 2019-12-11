@@ -20,13 +20,18 @@ $color-white: #f9f9f9;
 
   .div-container {
     position: relative;
-    height: 20vh;
+    height: 25vh;
     color: $color-white;
     padding: 0 4vw;
     font-weight: 200;
-    color: rgba(249, 249, 249, 0.19);
-    transition: color 1s linear;
+    opacity: 0.2;
+    transition: opacity 1s linear;
+
+    @media screen and (min-width: $break-small) {
+      height: 20vh;
+    }
   }
+
   .div-container:nth-child(odd) {
     border-left: 1px solid $color-turquoise;
     align-self: flex-end;
@@ -57,10 +62,7 @@ $color-white: #f9f9f9;
   }
 
   .show {
-    color: $color-white;
-    circle {
-      background: green;
-    }
+    opacity: 1;
   }
 
   .circle:nth-child(even) {
