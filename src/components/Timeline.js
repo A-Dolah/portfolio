@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-
+import React, { useState } from "react"
+import VizSensor from "react-visibility-sensor"
 import timelineStyles from "./timeline.module.scss"
 
 const Timeline = () => {
@@ -16,173 +16,223 @@ const Timeline = () => {
     ten: false,
   })
 
-  let sliderBoxes = []
-  let container = ""
-
-  useEffect(() => {
-    container = document.querySelector(".container")
-    sliderBoxes = document.querySelectorAll(`.${timelineStyles.divContainer}`)
-    container.addEventListener("scroll", debounce(handleScroll))
-  }, [])
-
-  function debounce(func, wait = 20, immediate = true) {
-    var timeout
-    return function() {
-      var context = this,
-        args = arguments
-      var later = function() {
-        timeout = null
-        if (!immediate) func.apply(context, args)
-      }
-      var callNow = immediate && !timeout
-      clearTimeout(timeout)
-      timeout = setTimeout(later, wait)
-      if (callNow) func.apply(context, args)
-    }
-  }
-
-  const handleScroll = () => {
-    sliderBoxes.forEach(sliderBox => {
-      const slideInAt =
-        window.scrollY + window.innerHeight - sliderBox.height / 2
-      console.log(container.offsetTop)
-      const boxBottom = sliderBox.offsetTop + sliderBox.height
-      const isHalfShown = slideInAt > sliderBox.offsetTop
-      const isNotScrolledPast = container.scrollY < boxBottom
-      if (isHalfShown && isNotScrolledPast) {
-        console.log("adding")
-        sliderBox.className.add("visible")
-      } else {
-        console.log("removing")
-        sliderBox.classList.remove("visible")
-      }
-    })
-  }
-
   const onClick = num => {
     setVisible({ ...visible, [num]: !visible[num] })
   }
 
   return (
     <section className={timelineStyles.section}>
-      <div className={`${timelineStyles.divContainer} `}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
-        perspiciatis pariatur iure magni, itaque cumque beatae. Placeat
-        recusandae earum cumque cupiditate, atque, voluptatum, reiciendis harum
-        enim est iste voluptatem excepturi!
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, one: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.one ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("one")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam id
-        accusamus veniam corporis. Animi sint beatae ea asperiores iure minus
-        minima voluptas optio eveniet voluptatem? Sed architecto dolorem ipsum
-        labore.
+        >
+          <h1>2010-2015</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.one ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, two: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.two ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("two")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, qui
-        voluptatem id et voluptas in eum assumenda nihil, minus ad quae quisquam
-        alias facere, neque modi! Aspernatur quam nesciunt sequi?
+        >
+          <h1>2015-2017</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.two ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, three: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.three ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("three")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit alias sed
-        minima harum beatae veritatis repudiandae labore nemo a vel delectus
-        necessitatibus assumenda blanditiis dolores magni, quidem dolor.
-        Tempora, quisquam?
+        >
+          <h1>2017-2018</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.three ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, four: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.four ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("four")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error
-        aspernatur expedita reiciendis dolores porro, deserunt libero voluptatem
-        placeat debitis tempora quas, fugiat mollitia officia iusto nihil
-        veritatis veniam nobis autem.
+        >
+          <h1>2018</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.four ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, five: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.five ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("five")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-        dignissimos id ullam saepe. Hic magnam rem tenetur beatae, voluptatibus
-        quibusdam nam, aperiam perspiciatis itaque nihil aliquid quia accusamus,
-        consequuntur corrupti?
+        >
+          <h1>2019</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.five ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, six: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.six ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("six")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, nisi
-        magni earum sapiente quas tempore hic, nesciunt molestias, ad voluptate
-        id odit quisquam consequatur! Libero amet minima veniam obcaecati quia!
+        >
+          <h1>2020 - </h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.six ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, seven: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.seven ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("seven")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis
-        soluta, culpa rem consequuntur incidunt quibusdam nesciunt, aliquid,
-        praesentium laudantium dolore fuga quas. Cupiditate, eveniet nemo. Est
-        enim exercitationem totam recusandae.
+        >
+          <h1>2020-2022</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.seven ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, eight: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.eight ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("eight")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit explicabo
-        eaque beatae reprehenderit quidem libero adipisci, excepturi placeat
-        magnam vitae earum nihil molestias optio ad voluptates omnis assumenda
-        exercitationem quae?
+        >
+          <h1>2022-2024</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.eight ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, nine: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.nine ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("nine")}
-        ></div>
-      </div>
-      <div className={timelineStyles.divContainer}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-        deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-        voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-        delectus, quam natus?
+        >
+          <h1>2024-2026</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.nine ? timelineStyles.show : ""
+            }`}
+          ></div>
+        </div>
+      </VizSensor>
+      <VizSensor
+        onChange={isVisible => setVisible({ ...visible, ten: isVisible })}
+        minTopValue={400}
+      >
         <div
-          className={`${timelineStyles.circle} ${
+          className={`${timelineStyles.divContainer} ${
             visible.ten ? timelineStyles.show : ""
           }`}
-          onClick={() => onClick("ten")}
-        ></div>
-      </div>
+        >
+          <h1>2025-2028</h1>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
+          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
+          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
+          delectus, quam natus?
+          <div
+            className={`${timelineStyles.circle} ${
+              visible.ten ? timelineStyles.show : ""
+            }`}
+            onClick={() => onClick("ten")}
+          ></div>
+        </div>
+      </VizSensor>
     </section>
   )
 }

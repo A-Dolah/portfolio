@@ -6,21 +6,29 @@ $color-lightred: #ebaca2;
 $color-lightgreen: #bed3c3;
 $color-turquoise: #4a919e;
 $color-darkpurple: #212e53;
-$color-white: #f9f9f9f9;
+$color-white: #f9f9f9;
 
 .section {
   display: flex;
   flex-direction: column;
   height: auto;
+  font-size: 0.7rem;
+
+  @media screen and (min-width: $break-small) {
+    font-size: 1rem;
+  }
+
   .div-container {
     position: relative;
-    height: 80vh;
+    height: 20vh;
     color: $color-white;
-    padding-left: 2vw;
+    padding: 0 4vw;
     font-weight: 200;
+    color: rgba(249, 249, 249, 0.19);
+    transition: color 1s linear;
   }
   .div-container:nth-child(odd) {
-    border-left: 1px solid red;
+    border-left: 1px solid $color-turquoise;
     align-self: flex-end;
     padding-right: 1px;
     width: 50%;
@@ -30,11 +38,11 @@ $color-white: #f9f9f9f9;
   }
 
   .div-container:nth-child(even) {
-    border-right: 1px solid red;
+    border-right: 1px solid $color-turquoise;
     padding-right: -1px;
     width: calc(50% + 1px);
     .circle {
-      right: -1vh;
+      left: calc(100% - 6px);
     }
   }
 
@@ -43,12 +51,16 @@ $color-white: #f9f9f9f9;
     width: 2vh;
     height: 2vh;
     border-radius: 50%;
-    border: 1px solid green;
-    bottom: 0;
+    border: 1px solid $color-darkred;
+    background-color: $color-turquoise;
+    top: 0;
   }
 
   .show {
-    background-color: rgb(101, 167, 101);
+    color: $color-white;
+    circle {
+      background: green;
+    }
   }
 
   .circle:nth-child(even) {

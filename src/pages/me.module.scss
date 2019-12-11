@@ -8,46 +8,23 @@ $color-turquoise: #4a919e;
 $color-darkpurple: #212e53;
 $color-white: #f9f9f9f9;
 
-section {
-  position: relative;
+.content {
+  display: flex;
+  flex-direction: column;
 }
 
-// section:nth-child(odd) {
-//   background: $color-lightgreen;
-// }
+.about-header {
+  color: $color-white;
+  font-size: 2rem;
+  margin: 2rem 0;
+  align-self: center;
+  border-bottom: 1px solid $color-lightred;
+}
 
-// .section-two {
-//   div {
-//     font-size: 2em;
-//     width: 30%;
-//     margin-top: 17%;
-//     position: absolute;
-//   }
+.a {
+  align-self: center;
+}
 
-//   .two,
-//   .three,
-//   .four {
-//     position: absolute;
-//   }
-
-//   div:nth-of-type(2) {
-//     width: 40%;
-//     right: 0;
-//     top: 20%;
-//   }
-
-//   div:nth-of-type(3) {
-//     width: 25%;
-//     right: 40%;
-//     top: 29%;
-//     margin-top: 15%;
-//   }
-
-//   span {
-//     width: 100%;
-//     background: red;
-//     display: block;
-//     height: 5px;
-//     margin-top: 20px;
-//   }
-// }
+.image {
+  height: 50px;
+}
