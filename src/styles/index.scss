@@ -6,13 +6,13 @@ span,
 applet,
 object,
 iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6,
+// p,
 blockquote,
 pre,
 a,
@@ -33,7 +33,7 @@ s,
 samp,
 small,
 strike,
-strong,
+// strong,
 sub,
 sup,
 tt,
@@ -47,7 +47,7 @@ dt,
 dd,
 ol,
 ul,
-li,
+// li,
 fieldset,
 form,
 label,
@@ -80,14 +80,17 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
   border: 0;
   vertical-align: baseline;
 }
 
 html {
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 *,
 *:before,
