@@ -9,6 +9,7 @@ $color-darkpurple: #212e53;
 $color-white: #f9f9f9f9;
 
 .posts {
+  padding: 0;
   list-style-type: none;
   margin: 0;
   display: flex;
@@ -40,6 +41,7 @@ $color-white: #f9f9f9f9;
     align-items: center;
   }
   h2 {
+    padding: 0;
     font-size: 1rem;
     margin-bottom: 0;
   }
@@ -54,7 +56,7 @@ $color-white: #f9f9f9f9;
     margin: 0.9rem 0;
   }
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
   p {
     font-size: 0.8rem;

@@ -9,7 +9,7 @@ $color-darkpurple: #212e53;
 $color-white: #f9f9f9f9;
 
 .header {
-  margin-top: 1vh;
+  margin-top: 2vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,13 +23,12 @@ $color-white: #f9f9f9f9;
 }
 .title {
   font-size: 1.4rem;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
 }
 .paragraph {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.4rem;
-  margin-bottom: 3vh;
   padding-bottom: 1vh;
   border-bottom: 1px solid $color-turquoise;
 }

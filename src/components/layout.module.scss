@@ -15,6 +15,8 @@ $color-white: #f9f9f9f9;
 }
 
 .container {
+  padding: 0 2rem;
+
   background-color: $color-darkpurple;
   position: absolute;
   left: 0;
@@ -25,12 +27,11 @@ $color-white: #f9f9f9f9;
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  min-height: 100vh;
+  min-height: 95vh;
   overflow: scroll;
   @media only screen and (min-width: $break-large) {
     margin: 2.5vh auto;
     height: 95vh;
-    padding: 0 2rem;
   }
 }
 
