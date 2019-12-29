@@ -79,13 +79,14 @@ $color-white: #f9f9f9f9;
     }
 
     .nav-list {
-      height: 0;
-      flex-direction: column;
-      justify-content: space-evenly;
       align-items: center;
-      visibility: hidden;
+      flex-direction: column;
+      height: 0;
+      justify-content: space-evenly;
       opacity: 0;
+      padding: 0;
       transition: visibility 0s, opacity 2s linear, height 0.2s linear;
+      visibility: hidden;
     }
 
     input:checked + .nav-list {
