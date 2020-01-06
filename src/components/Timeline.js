@@ -6,7 +6,7 @@ const Timeline = () => {
   const [visible, setVisible] = useState({
     one: true,
     two: true,
-    three: false,
+    three: true,
     four: false,
     five: false,
     six: false,
@@ -16,23 +16,25 @@ const Timeline = () => {
     ten: false,
   })
 
-  const onClick = num => {
-    setVisible({ ...visible, [num]: !visible[num] })
-  }
-
   return (
     <section className={timelineStyles.section}>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, one: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.one ? timelineStyles.show : ""
           }`}
         >
-          <h1>2010</h1>
-          Graduated upper secondary school in Lund.
+          <div
+            className={`${timelineStyles.content} ${
+              visible.one ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2010</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.one ? timelineStyles.show : ""
@@ -42,18 +44,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, two: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.two ? timelineStyles.show : ""
           }`}
         >
-          <h1>2015-2017</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.two ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.two ? timelineStyles.show : ""
@@ -63,18 +68,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, three: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.three ? timelineStyles.show : ""
           }`}
         >
-          <h1>2017-2018</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.three ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.three ? timelineStyles.show : ""
@@ -84,18 +92,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, four: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.four ? timelineStyles.show : ""
           }`}
         >
-          <h1>2018</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.four ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.four ? timelineStyles.show : ""
@@ -105,18 +116,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, five: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.five ? timelineStyles.show : ""
           }`}
         >
-          <h1>2019</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.five ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.five ? timelineStyles.show : ""
@@ -126,18 +140,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, six: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.six ? timelineStyles.show : ""
           }`}
         >
-          <h1>2020 - </h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.six ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.six ? timelineStyles.show : ""
@@ -147,18 +164,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, seven: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.seven ? timelineStyles.show : ""
           }`}
         >
-          <h1>2020-2022</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.seven ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.seven ? timelineStyles.show : ""
@@ -168,18 +188,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, eight: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.eight ? timelineStyles.show : ""
           }`}
         >
-          <h1>2022-2024</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.eight ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.eight ? timelineStyles.show : ""
@@ -189,18 +212,21 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, nine: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.nine ? timelineStyles.show : ""
           }`}
         >
-          <h1>2024-2026</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.nine ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.nine ? timelineStyles.show : ""
@@ -210,23 +236,25 @@ const Timeline = () => {
       </VizSensor>
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, ten: isVisible })}
-        minTopValue={400}
+        partialVisibility={true}
       >
         <div
           className={`${timelineStyles.divContainer} ${
             visible.ten ? timelineStyles.show : ""
           }`}
         >
-          <h1>2025-2028</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <div
+            className={`${timelineStyles.content} ${
+              visible.ten ? timelineStyles.showContent : ""
+            }`}
+          >
+            <h1>2011</h1>
+            <p>Graduated upper secondary school in Lund.</p>
+          </div>
           <div
             className={`${timelineStyles.circle} ${
               visible.ten ? timelineStyles.show : ""
             }`}
-            onClick={() => onClick("ten")}
           ></div>
         </div>
       </VizSensor>

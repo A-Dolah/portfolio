@@ -1,12 +1,4 @@
-$break-small: 400px;
-$break-large: 750px;
-
-$color-darkred: #ce6a6b;
-$color-lightred: #ebaca2;
-$color-lightgreen: #bed3c3;
-$color-turquoise: #4a919e;
-$color-darkpurple: #212e53;
-$color-white: #f9f9f9;
+@import "base";
 
 .section {
   display: flex;
@@ -34,12 +26,22 @@ $color-white: #f9f9f9;
   }
 
   .div-container:nth-child(odd) {
-    border-left: 1px solid $color-turquoise;
     align-self: flex-end;
+    border-left: 1px solid $color-turquoise;
+    left: 10;
     padding-right: 1px;
     width: 50%;
     .circle {
       left: -1vh;
+    }
+    .content {
+      left: 200px;
+      position: absolute;
+      transition: left 1s cubic-bezier(0.42, -0.02, 0.2, 1);
+      width: 100%;
+    }
+    .show-content {
+      left: 50px;
     }
   }
 
@@ -52,6 +54,14 @@ $color-white: #f9f9f9;
       @media screen and (min-width: $break-small) {
         left: calc(100% - 10px);
       }
+    }
+    .content {
+      left: -200px;
+      position: absolute;
+      transition: left 1s cubic-bezier(0.42, -0.02, 0.2, 1);
+    }
+    .show-content {
+      left: 0px;
     }
   }
 
