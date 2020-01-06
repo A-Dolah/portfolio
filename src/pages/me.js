@@ -12,7 +12,7 @@ const AboutHeader = ({ text }) => {
 }
 
 const AboutPage = () => {
-  const title = "A little about me!"
+  const title = "A little bit about me!"
   const paragraph = "Who I am and what I made"
   return (
     <Layout>
