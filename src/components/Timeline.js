@@ -31,11 +31,8 @@ const Timeline = () => {
             visible.one ? timelineStyles.show : ""
           }`}
         >
-          <h1>2010-2015</h1>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores
-          deleniti quod corrupti aperiam nihil magni ad nobis repellendus
-          voluptatibus veritatis fugit molestias nisi molestiae ea mollitia unde
-          delectus, quam natus?
+          <h1>2010</h1>
+          Graduated upper secondary school in Lund.
           <div
             className={`${timelineStyles.circle} ${
               visible.one ? timelineStyles.show : ""

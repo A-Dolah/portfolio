@@ -14,7 +14,7 @@ const Layout = props => {
     query {
       image: file(relativePath: { eq: "images/wave.jpg" }) {
         childImageSharp {
-          fixed(width: 1600) {
+          fixed(width: 2000) {
             ...GatsbyImageSharpFixed
           }
         }

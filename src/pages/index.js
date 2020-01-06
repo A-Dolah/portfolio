@@ -10,7 +10,7 @@ const IndexPage = () => {
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
-    "I'm a software developer from Sweden. This is where I collect things I've written as well as resources I find very useful. I hope you'll find it interesting :)"
+    "I'm a software developer from Sweden. This is where I collect things I've made and written as well as resources I find useful. I hope you'll find it interesting :)"
 
   const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
 

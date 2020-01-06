@@ -17,16 +17,17 @@ $color-white: #f9f9f9f9;
   border-bottom: 1px solid $color-lightred;
   color: $color-white;
   font-size: 1.4rem;
-  margin: 2rem 0 3rem;
+  margin: 0 0 2rem;
   padding-bottom: 1vh;
 
   @media screen and (min-width: $break-small) {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 .a {
   align-self: center;
+  padding-bottom: 2rem;
 }
 
 .image {

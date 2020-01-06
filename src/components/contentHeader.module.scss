@@ -23,14 +23,15 @@ $color-white: #f9f9f9f9;
 }
 .title {
   font-size: 1.4rem;
-  margin-bottom: 1vh;
+  margin-bottom: 0.5vh;
 }
 .paragraph {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.4rem;
-  padding-bottom: 1vh;
-  border-bottom: 1px solid $color-turquoise;
+  margin: 0 0 5vh 0;
+  padding: 0;
+  // border-bottom: 1px solid $color-turquoise;
 }
 
 @media screen and (min-width: $break-small) {

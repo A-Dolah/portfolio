@@ -39,7 +39,7 @@ $color-white: #f9f9f9f9;
   .aside {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   h2 {
     font-size: 1rem;

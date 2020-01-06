@@ -36,8 +36,7 @@ export const blogListQuery = graphql`
 
 const blogList = ({ data, pageContext }) => {
   const title = "Things on my mind"
-  const paragraph =
-    "Could be anything, really. Most probably coding though, or football."
+  const paragraph = "Could be anything, really. Most probably coding though!"
 
   return (
     <Layout>

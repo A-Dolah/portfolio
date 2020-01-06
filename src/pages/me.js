@@ -12,8 +12,8 @@ const AboutHeader = ({ text }) => {
 }
 
 const AboutPage = () => {
-  const title = "This is about me"
-  const paragraph = "Not only things I made but also who I am!"
+  const title = "A little about me!"
+  const paragraph = "Who I am and what I made"
   return (
     <Layout>
       <Head title="About" />
