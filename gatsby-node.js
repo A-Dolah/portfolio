@@ -28,7 +28,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
   paginate({
     createPage,
     items: response.data.allContentfulBlogPost.edges,
-    itemsPerPage: 5,
+    itemsPerPage: 4,
     pathPrefix: "/blog",
     component: blogListTemplate,
   })
@@ -36,7 +36,7 @@ module.exports.createPages = async ({ graphql, actions: { createPage } }) => {
   paginate({
     createPage,
     items: response.data.allContentfulReadingPost.edges,
-    itemsPerPage: 5,
+    itemsPerPage: 4,
     pathPrefix: "/reading",
     component: readingListTemplate,
   })

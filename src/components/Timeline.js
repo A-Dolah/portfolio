@@ -298,7 +298,7 @@ const Timeline = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://www.linkedin.com/company/applied-technology-stockholm"
+                href="https://salt.study/"
               >
                 School of Applied Technology
               </a>{" "}

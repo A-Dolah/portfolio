@@ -21,6 +21,7 @@
   align-items: space-between;
   min-height: 95vh;
   overflow: scroll;
+
   @media only screen and (min-width: $break-large) {
     margin: 2.5vh auto;
     height: 95vh;
@@ -33,4 +34,8 @@
   flex-direction: column;
   justify-content: flex-start;
   opacity: 1;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
