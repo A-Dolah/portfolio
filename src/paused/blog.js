@@ -8,27 +8,27 @@ import ContentHeader from "../components/ContentHeader"
 import blogStyles from "./blog.module.scss"
 
 const BlogPage = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
-        edges {
-          node {
-            title
-            slug
-            publishedDate(formatString: "MMMM Do, YYYY")
-            image {
-              fixed(width: 100, height: 100) {
-                width
-                height
-                src
-                srcSet
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query {
+  //     allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
+  //       edges {
+  //         node {
+  //           title
+  //           slug
+  //           publishedDate(formatString: "MMMM Do, YYYY")
+  //           image {
+  //             fixed(width: 100, height: 100) {
+  //               width
+  //               height
+  //               src
+  //               srcSet
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
 
   const title = "A place where I collect things on my mind"
   const paragraph =

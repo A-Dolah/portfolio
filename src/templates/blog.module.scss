@@ -1,9 +1,18 @@
 @import "../components/base";
 
 .content-section {
+  background-color: $color-white;
   height: 100%;
   padding: 2rem;
-  background-color: $color-white;
+  * {
+    font-family: "eb-garamond", serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 1.5rem;
+  }
+  @media screen and (min-width: $break-large) {
+    padding: 2rem 8rem;
+  }
 }
 
 .image {

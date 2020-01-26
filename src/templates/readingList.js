@@ -47,7 +47,11 @@ const readingList = ({ data, pageContext }) => {
         {data.allContentfulReadingPost.edges.map((edge, index) => {
           return (
             <li key={index} className={readingStyles.post}>
-              <a href={edge.node.link} target="_blank">
+              <a
+                href={edge.node.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <aside className={readingStyles.aside}>
                   <h2>{edge.node.article}</h2>
                   <p>{edge.node.linkedDate}</p>

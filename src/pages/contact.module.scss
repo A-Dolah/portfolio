@@ -1,0 +1,36 @@
+@import "../components/base";
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  button {
+    height: 2rem;
+    background-color: $color-turquoise;
+  }
+
+  input,
+  textarea,
+  button {
+    border-radius: 4px;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    height: 2rem;
+    width: 15rem;
+  }
+
+  textarea {
+    height: auto;
+    min-height: 10rem;
+    width: 15rem;
+  }
+}
+
+.p {
+  color: $color-lightred;
+}

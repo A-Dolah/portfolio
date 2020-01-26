@@ -36,6 +36,7 @@
     "react-visibility-sensor": "^5.1.1",
     "typeface-arvo": "0.0.72",
     "typeface-crimson-text": "0.0.72",
+    "typeface-eb-garamond": "^1.1.3",
     "typeface-oswald": "0.0.75"
   },
   "devDependencies": {

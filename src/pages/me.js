@@ -25,7 +25,6 @@ const AboutPage = () => {
         <a href={Resume} download className={meStyles.a}>
           <img src={pdfIcon} alt="pdf icon" className={meStyles.image} />
         </a>
-        <AboutHeader text="Projects" />
       </section>
     </Layout>
   )
