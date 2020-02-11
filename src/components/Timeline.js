@@ -123,8 +123,10 @@ const Timeline = () => {
   `)
 
   let pictureDimensionExtension
-  if (window.innerWidth > 630) pictureDimensionExtension = "Browser"
-  if (window.innerWidth < 630) pictureDimensionExtension = "Mobile"
+  if (typeof window !== "undefined") {
+    if (window.innerWidth > 630) pictureDimensionExtension = "Browser"
+    if (window.innerWidth < 630) pictureDimensionExtension = "Mobile"
+  }
 
   return (
     <section className={timelineStyles.section}>
