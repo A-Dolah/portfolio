@@ -2,8 +2,8 @@
 
 .section {
   margin-bottom: 4vh;
-  padding: 0 10vw;
   margin-top: 3vh;
+  padding: 0 7.5vw;
   h1,
   p {
     color: $color-white;
@@ -15,8 +15,8 @@
   p {
     font-size: 1.1rem;
     font-weight: 500;
-    margin-bottom: 2vh;
     line-height: 1.8rem;
+    margin-bottom: 2vh;
   }
 
   .blinking {
