@@ -122,9 +122,8 @@ const Timeline = () => {
     }
   `)
 
-  let pictureDimensionExtension
+  let pictureDimensionExtension = "Browser"
   if (typeof window !== "undefined") {
-    if (window.innerWidth > 630) pictureDimensionExtension = "Browser"
     if (window.innerWidth < 630) pictureDimensionExtension = "Mobile"
   }
 
