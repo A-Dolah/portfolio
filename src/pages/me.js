@@ -4,6 +4,7 @@ import Head from "../components/Head"
 import ContentHeader from "../components/ContentHeader"
 import Timeline from "../components/Timeline"
 import Resume from "../../static/resume.pdf"
+import Portfolio from "../components/Portfolio"
 import pdfIcon from "../../static/pdf.png"
 import meStyles from "./me.module.scss"
 
@@ -25,6 +26,8 @@ const AboutPage = () => {
         <a href={Resume} download className={meStyles.a}>
           <img src={pdfIcon} alt="pdf icon" className={meStyles.image} />
         </a>
+        <AboutHeader text="Portfolio" />
+        <Portfolio />
       </section>
     </Layout>
   )

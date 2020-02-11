@@ -1,0 +1,26 @@
+@import "base";
+
+.section {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  .container {
+    background-color: $color-lightgreen;
+    border-radius: 5px;
+    display: grid;
+    height: 250px;
+    opacity: 0.6;
+    width: 250px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .image {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  .paragraph {
+    height: 35px;
+    text-align: center;
+  }
+}
