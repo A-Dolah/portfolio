@@ -21,57 +21,110 @@ const Timeline = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      student: file(relativePath: { eq: "images/student.jpg" }) {
+      studentBrowser: file(relativePath: { eq: "images/student.jpg" }) {
         childImageSharp {
           fixed(width: 250, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      uppsala: file(relativePath: { eq: "images/car.jpg" }) {
+      studentMobile: file(relativePath: { eq: "images/student.jpg" }) {
+        childImageSharp {
+          fixed(width: 120, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      uppsalaBrowser: file(relativePath: { eq: "images/car.jpg" }) {
         childImageSharp {
           fixed(width: 200, height: 200, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      prom: file(relativePath: { eq: "images/prom.jpg" }) {
+      uppsalaMobile: file(relativePath: { eq: "images/car.jpg" }) {
+        childImageSharp {
+          fixed(width: 120, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      promBrowser: file(relativePath: { eq: "images/prom.jpg" }) {
         childImageSharp {
           fixed(width: 200, height: 200, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      graduation: file(relativePath: { eq: "images/graduation.jpg" }) {
+      promMobile: file(relativePath: { eq: "images/prom.jpg" }) {
+        childImageSharp {
+          fixed(width: 120, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      graduationBrowser: file(relativePath: { eq: "images/graduation.jpg" }) {
         childImageSharp {
           fixed(width: 200, height: 200, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      lundsTR: file(relativePath: { eq: "images/LundsTR.jpg" }) {
+      graduationMobile: file(relativePath: { eq: "images/graduation.jpg" }) {
+        childImageSharp {
+          fixed(width: 120, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      lundsTRBrowser: file(relativePath: { eq: "images/LundsTR.jpg" }) {
         childImageSharp {
           fixed(width: 200, height: 200, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      evernote: file(relativePath: { eq: "images/evernote.jpg" }) {
+      lundsTRMobile: file(relativePath: { eq: "images/LundsTR.jpg" }) {
+        childImageSharp {
+          fixed(width: 120, height: 120, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      evernoteBrowser: file(relativePath: { eq: "images/evernote.jpg" }) {
         childImageSharp {
           fixed(width: 250, height: 200, quality: 80) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      linkedin: file(relativePath: { eq: "images/linkedin.jpg" }) {
+      evernoteMobile: file(relativePath: { eq: "images/evernote.jpg" }) {
         childImageSharp {
-          fixed(width: 250, height: 250, quality: 100) {
+          fixed(width: 120, height: 120, quality: 80) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedinBrowser: file(relativePath: { eq: "images/linkedin.jpg" }) {
+        childImageSharp {
+          fixed(width: 200, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      linkedinMobile: file(relativePath: { eq: "images/linkedin.jpg" }) {
+        childImageSharp {
+          fixed(width: 120, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
+
+  let pictureDimensionExtension
+  if (window.innerWidth > 630) pictureDimensionExtension = "Browser"
+  if (window.innerWidth < 630) pictureDimensionExtension = "Mobile"
 
   return (
     <section className={timelineStyles.section}>
@@ -97,7 +150,10 @@ const Timeline = () => {
               left.
             </p>
             <Img
-              fixed={data.student.childImageSharp.fixed}
+              fixed={
+                data[`student${pictureDimensionExtension}`].childImageSharp
+                  .fixed
+              }
               className={timelineStyles.image}
               alt="graduation image"
             />
@@ -130,7 +186,10 @@ const Timeline = () => {
               sister and my dad in the moving truck on our way to Uppsala.
             </p>
             <Img
-              fixed={data.uppsala.childImageSharp.fixed}
+              fixed={
+                data[`uppsala${pictureDimensionExtension}`].childImageSharp
+                  .fixed
+              }
               className={timelineStyles.image}
               alt="image in car"
             />
@@ -164,7 +223,9 @@ const Timeline = () => {
               occasion though).
             </p>
             <Img
-              fixed={data.prom.childImageSharp.fixed}
+              fixed={
+                data[`prom${pictureDimensionExtension}`].childImageSharp.fixed
+              }
               className={timelineStyles.image}
               alt="couple on prom"
             />
@@ -198,7 +259,10 @@ const Timeline = () => {
               brother to the right!
             </p>
             <Img
-              fixed={data.graduation.childImageSharp.fixed}
+              fixed={
+                data[`graduation${pictureDimensionExtension}`].childImageSharp
+                  .fixed
+              }
               className={timelineStyles.image}
               alt="graduation picture"
             />
@@ -228,7 +292,10 @@ const Timeline = () => {
             <h1>2016-2017</h1>
             <p>During this time I did my clerkship at Lund District Court.</p>
             <Img
-              fixed={data.lundsTR.childImageSharp.fixed}
+              fixed={
+                data[`lundsTR${pictureDimensionExtension}`].childImageSharp
+                  .fixed
+              }
               className={timelineStyles.image}
               alt="picture of Lund District Court"
             />
@@ -263,7 +330,10 @@ const Timeline = () => {
               with the heading "First day of learning to code".
             </p>
             <Img
-              fixed={data.evernote.childImageSharp.fixed}
+              fixed={
+                data[`evernote${pictureDimensionExtension}`].childImageSharp
+                  .fixed
+              }
               className={timelineStyles.image}
               alt="screenshot of Evernote note"
             />
@@ -305,7 +375,10 @@ const Timeline = () => {
               and all of a sudden everything changed!
             </p>
             <Img
-              fixed={data.linkedin.childImageSharp.fixed}
+              fixed={
+                data[`linkedin${pictureDimensionExtension}`].childImageSharp
+                  .fixed
+              }
               className={timelineStyles.image}
               alt="screenshot linkedin post"
             />
