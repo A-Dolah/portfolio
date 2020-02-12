@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
@@ -18,6 +18,15 @@ const Timeline = () => {
     nine: false,
     ten: false,
   })
+  const [pictureDimensionExtension, setPictureDimensionExtension] = useState(
+    "Browser"
+  )
+
+  useEffect(() => {
+    if (window.innerWidth < 630) {
+      setPictureDimensionExtension("Mobile")
+    }
+  }, [setPictureDimensionExtension])
 
   const data = useStaticQuery(graphql`
     query {
@@ -121,11 +130,6 @@ const Timeline = () => {
       }
     }
   `)
-
-  let pictureDimensionExtension = "Browser"
-  if (typeof window !== "undefined") {
-    if (window.innerWidth < 630) pictureDimensionExtension = "Mobile"
-  }
 
   return (
     <section className={timelineStyles.section}>
