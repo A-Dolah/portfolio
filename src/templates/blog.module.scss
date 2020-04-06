@@ -10,12 +10,20 @@
     letter-spacing: 0.5px;
     line-height: 1.5rem;
   }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  a,
+  a:visited {
+    color: $color-darkred;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  img {
+    width: 100%;
+  }
   @media screen and (min-width: $break-large) {
     padding: 2rem 8rem;
   }
-}
-
-.image {
-  max-width: 250px;
-  max-height: 250px;
 }
