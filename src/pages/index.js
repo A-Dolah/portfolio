@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "gatsby"
 import Layout from "../components/Layout"
 import Head from "../components/Head"
 
@@ -93,10 +94,10 @@ const IndexPage = () => {
               <span key={index}>{letter}</span>
             ))}
         </p>
-        {/* {visibleQuestionLetters.length - 1 === questionString.length && ( */}
         <form
           name="greeting"
           method="post"
+          action="/pages/success"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
@@ -110,12 +111,16 @@ const IndexPage = () => {
             autoFocus
           />
           {userInput ? (
-            <input type="submit" value="Send!" className={indexStyles.submit} />
+            <button type="submit" className={indexStyles.submit}>
+              {" "}
+              <Link to="/success" state={{ modal: true }}>
+                Send!
+              </Link>
+            </button>
           ) : (
             <div className={indexStyles.buttonPlaceholder} />
           )}
         </form>
-        {/* )} */}
       </section>
     </Layout>
   )
