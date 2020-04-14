@@ -93,33 +93,29 @@ const IndexPage = () => {
               <span key={index}>{letter}</span>
             ))}
         </p>
-        {visibleQuestionLetters.length - 1 === questionString.length && (
-          <form
-            name="greeting"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="form-name" value="greeting" />
-            <textarea
-              type="text"
-              className={indexStyles.userAnswer}
-              onKeyUp={e => {
-                setUserInput(e.target.value)
-              }}
-              autoFocus
-            />
-            {userInput ? (
-              <input
-                type="submit"
-                value="Send!"
-                className={indexStyles.submit}
-              />
-            ) : (
-              <div className={indexStyles.buttonPlaceholder} />
-            )}
-          </form>
-        )}
+        {/* {visibleQuestionLetters.length - 1 === questionString.length && ( */}
+        <form
+          name="greeting"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="greeting" />
+          <textarea
+            type="text"
+            className={indexStyles.userAnswer}
+            onKeyUp={e => {
+              setUserInput(e.target.value)
+            }}
+            autoFocus
+          />
+          {userInput ? (
+            <input type="submit" value="Send!" className={indexStyles.submit} />
+          ) : (
+            <div className={indexStyles.buttonPlaceholder} />
+          )}
+        </form>
+        {/* )} */}
       </section>
     </Layout>
   )
