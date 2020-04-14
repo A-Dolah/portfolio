@@ -99,22 +99,25 @@ const IndexPage = () => {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          action="/success"
         >
           <input type="hidden" name="form-name" value="greeting" />
-          <textarea
-            type="text"
-            name="greeting"
-            className={indexStyles.userAnswer}
-            onKeyUp={e => {
-              setUserInput(e.target.value)
-            }}
-            autoFocus
-          />
+          {visibleQuestionLetters.length - 1 === questionString.length && (
+            <textarea
+              type="text"
+              name="greeting"
+              className={indexStyles.userAnswer}
+              onKeyUp={e => {
+                setUserInput(e.target.value)
+              }}
+              autoFocus
+              maxLength={60}
+            />
+          )}
           {userInput ? (
             <button type="submit" className={indexStyles.submit}>
-              {" "}
               <Link to="/success" state={{ modal: true }}>
-                Send!
+                Let me know!
               </Link>
             </button>
           ) : (

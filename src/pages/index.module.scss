@@ -43,6 +43,14 @@
     margin-bottom: 1rem;
     height: 2rem;
     background-color: $color-turquoise;
+    a {
+      color: $color-white;
+      text-decoration: none;
+      padding: 5px;
+    }
+    a:visited {
+      text-decoration: none;
+    }
   }
 
   .button-placeholder {
