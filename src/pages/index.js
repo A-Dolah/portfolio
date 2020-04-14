@@ -7,10 +7,13 @@ import indexStyles from "./index.module.scss"
 const IndexPage = () => {
   const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
   const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([])
+  const [visibleQuestionLetters, setVisibleQuestionLetters] = useState([])
+  const [userInput, setUserInput] = useState("")
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
     "I'm a software developer from Sweden. This is where I collect things I've made and written as well as resources I find useful. I hope you'll find it interesting :)"
+  const questionString = "How are you doing today?"
 
   const randomNumberInRange = (min, max) => Math.random() * (max - min) + min
 
@@ -24,7 +27,7 @@ const IndexPage = () => {
     setStateFunction([...state, letterToPrint])
   }
 
-  const timerFunc = (headerString, paragraphString) => {
+  const timerFunc = (headerString, paragraphString, questionString) => {
     const timer = setTimeout(
       () => {
         if (visibleHeaderLetters.length <= headerString.length) {
@@ -39,20 +42,28 @@ const IndexPage = () => {
             visibleParagraphLetters,
             setVisibleParagraphLetters
           )
+        } else if (visibleQuestionLetters.length <= questionString.length) {
+          printFunction(
+            questionString,
+            visibleQuestionLetters,
+            setVisibleQuestionLetters
+          )
         }
       },
-      visibleHeaderLetters.length - 1 === headerString.length &&
-        visibleParagraphLetters.length === 1
+      (visibleHeaderLetters.length - 1 === headerString.length &&
+        visibleParagraphLetters.length === 1) ||
+        (visibleParagraphLetters.length - 1 === paragraphString.length &&
+          visibleQuestionLetters.length === 1)
         ? 900
         : randomNumberInRange(20, 70)
     )
 
-    if (visibleParagraphLetters.length - 1 === paragraphString.length) {
+    if (visibleQuestionLetters.length - 1 === questionString.length) {
       clearInterval(timer)
     }
   }
 
-  timerFunc(headerString, paragraphString)
+  timerFunc(headerString, paragraphString, questionString)
 
   return (
     <Layout>
@@ -72,10 +83,42 @@ const IndexPage = () => {
             visibleParagraphLetters.map((letter, index) => (
               <span key={index}>{letter}</span>
             ))}
-          {visibleParagraphLetters.length > 1 && (
+          {visibleParagraphLetters.length > 1 && visibleQuestionLetters < 2 && (
             <span className={indexStyles.blinking}> |</span>
           )}
         </p>
+        <p>
+          {visibleQuestionLetters.length > 0 &&
+            visibleQuestionLetters.map((letter, index) => (
+              <span key={index}>{letter}</span>
+            ))}
+        </p>
+        {visibleQuestionLetters.length - 1 === questionString.length && (
+          <form
+            name="Greeting"
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+          >
+            <textarea
+              type="text"
+              className={indexStyles.userAnswer}
+              onKeyUp={e => {
+                setUserInput(e.target.value)
+              }}
+              autoFocus
+            />
+            {userInput ? (
+              <input
+                type="submit"
+                value="Send!"
+                className={indexStyles.submit}
+              />
+            ) : (
+              <div className={indexStyles.buttonPlaceholder} />
+            )}
+          </form>
+        )}
       </section>
     </Layout>
   )
