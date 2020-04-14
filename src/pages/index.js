@@ -97,13 +97,13 @@ const IndexPage = () => {
         <form
           name="greeting"
           method="post"
-          action="/pages/success"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
           <input type="hidden" name="form-name" value="greeting" />
           <textarea
             type="text"
+            name="greeting"
             className={indexStyles.userAnswer}
             onKeyUp={e => {
               setUserInput(e.target.value)
