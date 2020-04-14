@@ -95,11 +95,13 @@ const IndexPage = () => {
         </p>
         {visibleQuestionLetters.length - 1 === questionString.length && (
           <form
-            name="Greeting"
-            method="post"
-            data-netlify="true"
+            name="greeting"
+            method="POST"
+            data-netlify={true}
             data-netlify-honeypot="bot-field"
           >
+            <input type="hidden" name="form-name" value="greeting" />
+
             <textarea
               type="text"
               className={indexStyles.userAnswer}
