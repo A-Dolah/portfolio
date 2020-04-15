@@ -136,7 +136,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, one: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -173,7 +173,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, two: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -209,7 +209,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, three: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -245,7 +245,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, four: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -282,7 +282,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, five: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -315,7 +315,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, six: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -353,7 +353,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, seven: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${
@@ -398,7 +398,7 @@ const Timeline = () => {
       <VizSensor
         onChange={isVisible => setVisible({ ...visible, eight: isVisible })}
         partialVisibility={true}
-        minTopValue={150}
+        minTopValue={400}
       >
         <div
           className={`${timelineStyles.divContainer} ${

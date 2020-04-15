@@ -1,11 +1,26 @@
 @import "base";
 
 .footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 1000px;
+  height: 12vh;
+  margin: 0 auto;
   text-align: center;
   color: $color-lightred;
+  background: $color-darkpurple;
+  padding: 3vh;
+  border-top: 0.5px solid $color-white;
+  p {
+    margin: 0;
+  }
 }
 
 .socialMedia {
+  margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -14,6 +29,6 @@
     margin: 1vh 1.5vw;
   }
   img {
-    height: 30px;
+    height: 25px;
   }
 }
