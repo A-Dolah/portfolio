@@ -12,7 +12,7 @@ import layoutStyles from "./layout.module.scss"
 const Layout = props => {
   const data = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "images/wave.jpg" }) {
+      image: file(relativePath: { eq: "images/fuji.jpg" }) {
         childImageSharp {
           fixed(width: 2000) {
             ...GatsbyImageSharpFixed
@@ -23,7 +23,7 @@ const Layout = props => {
   `)
   return (
     <div className={layoutStyles.background}>
-      <Img fixed={data.image.childImageSharp.fixed} alt="wave image" />
+      <Img fixed={data.image.childImageSharp.fixed} alt="fuji image" />
       <div className={`${layoutStyles.container} container`}>
         <Header />
         <div className={layoutStyles.content}>{props.children}</div>
