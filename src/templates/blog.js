@@ -1,6 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
+import { BLOCKS, MARKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+import Prism from "prismjs"
 import Head from "../components/Head"
 import Layout from "../components/Layout"
 import ContentHeader from "../components/ContentHeader"
@@ -20,14 +22,23 @@ export const query = graphql`
 `
 
 const Blog = props => {
+  useEffect(() => {
+    Prism.highlightAll()
+  })
   const options = {
     renderNode: {
-      "embedded-asset-block": node => {
+      [BLOCKS.EMBEDDED_ASSET]: node => {
         const alt = node.data.target.fields.title["en-US"]
         const url = node.data.target.fields.file["en-US"].url
-
         return <img className={blogStyles.image} alt={alt} src={url} />
       },
+    },
+    renderMark: {
+      [MARKS.CODE]: code => (
+        <pre data-src="prism.js" class="language-javascript" data-src-loaded>
+          <code class="language-javascript">{code}</code>
+        </pre>
+      ),
     },
   }
   return (
