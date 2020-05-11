@@ -4,8 +4,8 @@
     [
       "prismjs",
       {
-        "languages": ["javascript", "css", "markup"],
-        "plugins": ["show-language"],
+        "languages": ["javascript"],
+        "plugins": ["show-language", "copy-to-clipboard"],
         "theme": "tomorrow",
         "css": true
       }

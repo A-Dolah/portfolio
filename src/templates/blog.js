@@ -32,11 +32,11 @@ const Blog = props => {
         const url = node.data.target.fields.file["en-US"].url
         return <img className={blogStyles.image} alt={alt} src={url} />
       },
-    },
-    renderMark: {
-      [MARKS.CODE]: code => (
-        <pre data-src="prism.js" class="language-javascript" data-src-loaded>
-          <code class="language-javascript">{code}</code>
+      [BLOCKS.QUOTE]: (node, children) => (
+        <pre className="language-javascript">
+          <code className="language-javascript">
+            {children.map(line => line.props.children).join("\n")}
+          </code>
         </pre>
       ),
     },
