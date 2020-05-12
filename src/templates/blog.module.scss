@@ -23,7 +23,7 @@
     line-height: 1.5rem;
     padding: 0;
   }
-  code > span {
+  code > span, code > span > span {
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   }
   a,
