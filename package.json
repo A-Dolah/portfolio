@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "env-cmd -f .env gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -19,7 +19,7 @@
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^0.4.1",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.18.10",
+    "gatsby": "^2.21.24",
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-modal-routing": "^1.1.0",

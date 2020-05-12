@@ -23,8 +23,9 @@
     line-height: 1.5rem;
     padding: 0;
   }
-  code > span, code > span > span {
+  code, code > span, code > span > span {
     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: .8rem;
   }
   a,
   a:visited {
