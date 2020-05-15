@@ -23,15 +23,13 @@ const Layout = props => {
     }
   `)
   return (
-    <Div100vh>
-      <div className={layoutStyles.background}>
-        <Img fixed={data.image.childImageSharp.fixed} alt="fuji image" />
-        <div className={`${layoutStyles.container} container`}>
-          <Header />
-          <div className={layoutStyles.content}>{props.children}</div>
-        </div>
-        <Footer />
+    <Div100vh className={layoutStyles.background}>
+      <Img fixed={data.image.childImageSharp.fixed} alt="fuji image" />
+      <div className={`${layoutStyles.container} container`}>
+        <Header />
+        <div className={layoutStyles.content}>{props.children}</div>
       </div>
+      <Footer />
     </Div100vh>
   )
 }
