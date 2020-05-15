@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { graphql } from "gatsby"
-import { BLOCKS, MARKS } from "@contentful/rich-text-types"
+import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Prism from "prismjs"
 import Head from "../components/Head"
