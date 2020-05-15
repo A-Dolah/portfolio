@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Div100vh from 'react-div-100vh';
 import Header from "./Header"
 import Footer from "./Footer"
 import "normalize.css/normalize.css"
@@ -22,14 +23,16 @@ const Layout = props => {
     }
   `)
   return (
-    <div className={layoutStyles.background}>
-      <Img fixed={data.image.childImageSharp.fixed} alt="fuji image" />
-      <div className={`${layoutStyles.container} container`}>
-        <Header />
-        <div className={layoutStyles.content}>{props.children}</div>
+    <Div100vh>
+      <div className={layoutStyles.background}>
+        <Img fixed={data.image.childImageSharp.fixed} alt="fuji image" />
+        <div className={`${layoutStyles.container} container`}>
+          <Header />
+          <div className={layoutStyles.content}>{props.children}</div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Div100vh>
   )
 }
 
