@@ -42,7 +42,6 @@ const blogList = ({ data, pageContext }) => {
     <Layout>
       <Head title="Blog" />
       <ContentHeader title={title} paragraph={paragraph} />
-
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge, index) => {
           return (
