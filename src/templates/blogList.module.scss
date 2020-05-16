@@ -1,16 +1,16 @@
 @import "../components/base";
 
 .posts {
+  padding: 0;
   list-style-type: none;
-  margin: 0;
+  margin: 0 0 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
 }
 
 .post {
-  margin: 2rem 0;
+  margin-top: 2rem;
   width: 100%;
   a {
     background: $color-lightgreen;
@@ -34,6 +34,7 @@
     align-items: flex-start;
   }
   h2 {
+    padding: 0;
     font-size: 1rem;
     margin-bottom: 0;
   }
@@ -45,7 +46,7 @@
 
   @media screen and (min-width: $break-small) {
     width: 80%;
-    margin: 0.9rem 0;
+    margin-top: 0.9rem 0;
   }
   h2 {
     font-size: 1.5rem;
