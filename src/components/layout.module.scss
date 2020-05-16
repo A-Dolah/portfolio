@@ -9,7 +9,7 @@
 
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   flex-direction: column;
   background-color: $color-darkpurple;
   position: absolute;
@@ -35,7 +35,6 @@
   height: auto;
   // overflow: scroll;
   padding: 2rem;
-  
 }
 
 ::-webkit-scrollbar {
