@@ -13,8 +13,8 @@ const Layout = props => {
     query {
       image: file(relativePath: { eq: "images/fuji.jpg" }) {
         childImageSharp {
-          fixed(width: 2000) {
-            ...GatsbyImageSharpFixed
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -22,13 +22,18 @@ const Layout = props => {
   `)
   return (
     <div className={layoutStyles.background}>
-      <Img fixed={data.image.childImageSharp.fixed} alt="fuji image" />
+      <div className={layoutStyles.imageContainer}>
+        <Img
+          imgStyle={{ objectFit: "contain" }}
+          fluid={data.image.childImageSharp.fluid}
+          alt="fuji image"
+        />
+      </div>
       <div className={`${layoutStyles.container} container`}>
         <Header />
         <div className={layoutStyles.content}>{props.children}</div>
         <Footer />
       </div>
-
     </div>
   )
 }
