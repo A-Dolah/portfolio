@@ -21,11 +21,8 @@ export const blogListQuery = graphql`
           linkedDate(formatString: "MMMM Do, YYYY")
           link
           thumbnail {
-            fixed(width: 100, height: 100) {
-              width
-              height
-              src
-              srcSet
+            fluid(maxWidth: 800, quality: 90) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -57,11 +54,16 @@ const readingList = ({ data, pageContext }) => {
                   <p>{edge.node.linkedDate}</p>
                 </aside>
                 {edge.node.thumbnail && (
-                  <Img
-                    fixed={edge.node.thumbnail.fixed}
-                    alt="thumbnail"
-                    className={readingStyles.image}
-                  />
+                  <div className={readingStyles.imageWrapper}>
+                    <Img
+                      imgStyle={{
+                        objectFit: "contain",
+                      }}
+                      fluid={edge.node.thumbnail.fluid}
+                      alt="thumbnail"
+                      className={readingStyles.image}
+                    />
+                  </div>
                 )}
               </a>
             </li>

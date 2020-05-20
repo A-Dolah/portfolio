@@ -34,7 +34,7 @@
     align-items: flex-start;
   }
   h2 {
-    padding: 0;
+    padding: 0 4vw 0 0;
     font-size: 1rem;
     margin-bottom: 0;
   }
@@ -56,7 +56,13 @@
   }
 }
 
+.imageWrapper {
+  width: 100px;
+  min-height: 50px;
+  max-height: 90px;
+  overflow: hidden;
+}
+
 .image {
-  margin-left: 8vw;
-  object-fit: contain;
+  min-height: 100px;
 }

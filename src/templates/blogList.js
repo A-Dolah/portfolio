@@ -21,11 +21,8 @@ export const blogListQuery = graphql`
           slug
           publishedDate(formatString: "MMMM Do, YYYY")
           image {
-            fixed(width: 100, height: 100) {
-              width
-              height
-              src
-              srcSet
+            fluid(maxWidth: 800, quality: 90) {
+              ...GatsbyContentfulFluid_withWebp
             }
           }
         }
@@ -52,11 +49,16 @@ const blogList = ({ data, pageContext }) => {
                   <p>{edge.node.publishedDate}</p>
                 </aside>
                 {edge.node.image && (
-                  <Img
-                    fixed={edge.node.image.fixed}
-                    alt="thumbnail"
-                    className={blogStyles.image}
-                  />
+                  <div className={blogStyles.imageWrapper}>
+                    <Img
+                      imgStyle={{
+                        objectFit: "contain",
+                      }}
+                      fluid={edge.node.image.fluid}
+                      alt="thumbnail"
+                      className={blogStyles.image}
+                    />
+                  </div>
                 )}
               </Link>
             </li>
