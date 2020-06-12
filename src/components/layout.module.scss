@@ -1,11 +1,6 @@
 @import "base";
 @import "../pages/success.scss";
 
-.imageContainer {
-  width: 100vw;
-  height: 100vh;
-}
-
 .background {
   height: 100vh;
   width: 100vw;
@@ -22,14 +17,22 @@
   right: 0;
   top: 0;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 1200px;
   align-items: space-between;
   overflow-y: scroll;
   overflow-x: hidden;
   @media only screen and (min-width: $break-large) {
     margin: 0 auto;
-
     height: 100%;
+  }
+}
+
+.image-container {
+  background: blue;
+  width: 100vw;
+  height: 100vh;
+  img {
+    min-height: 100vh;
   }
 }
 
