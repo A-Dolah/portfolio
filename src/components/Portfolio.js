@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
 import portfolioStyles from "./portfolio.module.scss"
 
@@ -17,14 +18,16 @@ const Portfolio = () => {
   `)
   return (
     <section className={portfolioStyles.section}>
-      <div className={portfolioStyles.container}>
-        <p className={portfolioStyles.paragraph}>This Blog</p>
-        <Img
-          fixed={data.portfolio.childImageSharp.fixed}
-          className={portfolioStyles.image}
-          alt="portfolio picture"
-        />
-      </div>
+      <Link to="/blog/mysite">
+        <div className={portfolioStyles.container}>
+          <p className={portfolioStyles.paragraph}>This Blog</p>
+          <Img
+            fixed={data.portfolio.childImageSharp.fixed}
+            className={portfolioStyles.image}
+            alt="portfolio picture"
+          />
+        </div>
+      </Link>
       <div className={portfolioStyles.container}>
         <p className={portfolioStyles.paragraph}>Receipting</p>
         <Img
