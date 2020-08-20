@@ -114,11 +114,13 @@ const IndexPage = () => {
             />
           )}
           {userInput ? (
-            <button type="submit" className={indexStyles.submit}>
+            <button type="submit" className={indexStyles.submit} onClick={() => console.log('clicked')}>
+
               <Link to="/success" state={{ modal: true }}>
                 Let me know!
-              </Link>
+            </Link>
             </button>
+
           ) : (
               <div className={indexStyles.buttonPlaceholder} />
             )}

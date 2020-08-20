@@ -22,10 +22,10 @@ const AboutPage = () => {
       <section className={meStyles.content}>
         <AboutHeader text="Timeline" />
         <Timeline />
-        <AboutHeader text="Resume" />
+        {/* <AboutHeader text="Resume" />
         <a href={Resume} download className={meStyles.a}>
           <img src={pdfIcon} alt="pdf icon" className={meStyles.image} />
-        </a>
+        </a> */}
         <AboutHeader text="Portfolio" />
         <Portfolio />
       </section>

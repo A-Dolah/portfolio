@@ -257,7 +257,7 @@ const Timeline = () => {
             <h1>2015</h1>
             <p>
               I graduated from Uppsala University in June. The same summer I
-              started to work for the biggest law firm in the Nordics - Mannheimer Swartling. This picture includes all of my family expect for my mom who couldn't attend my graduation, sadly!
+              started to work for the biggest law firm in the Nordics - Mannheimer Swartling.
             </p>
             <Img
               fixed={
@@ -291,7 +291,7 @@ const Timeline = () => {
               }`}
           >
             <h1>2016-2017</h1>
-            <p>During this time I did my clerkship at Lund District Court. It was a very humbling experience working at a District Court. The diversity of people that you encounter at a court is incredible, and you learn so much, not only from a legal perspective, but also from a societial perspective.</p>
+            <p>During this time I did my clerkship at Lund District Court. I learnt a lot during this time, not only from a legal perspective but also from meeting so many different kinds of people from all over society.</p>
             <Img
               fixed={
                 data[`lundsTR${pictureDimensionExtension}`].childImageSharp
