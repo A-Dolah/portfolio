@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 import portfolioStyles from "./portfolio.module.scss"
 
+
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
     query {

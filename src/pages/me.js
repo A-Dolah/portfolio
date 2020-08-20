@@ -3,9 +3,7 @@ import Layout from "../components/Layout"
 import Head from "../components/Head"
 import ContentHeader from "../components/ContentHeader"
 import Timeline from "../components/Timeline"
-import Resume from "../../static/resume.pdf"
 import Portfolio from "../components/Portfolio"
-import pdfIcon from "../../static/pdf.png"
 import meStyles from "./me.module.scss"
 
 const AboutHeader = ({ text }) => {

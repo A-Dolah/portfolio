@@ -325,10 +325,7 @@ const Timeline = () => {
           >
             <h1>2018</h1>
             <p>
-              After finishing my clerkship, I returned to Mannheimer Swartling,
-              working mainly with litigation. This was also the year I wrote my
-              first line of code. I even have an Evernote note from 2018-09-11
-              with the heading "First day of learning to code".
+              After finishing my clerkship, I returned to Mannheimer Swartling. This was also the year I wrote my first line of code. I even have an Evernote note from 2018-09-11 with the heading "First day of learning to code".
             </p>
             <Img
               fixed={
@@ -410,7 +407,7 @@ const Timeline = () => {
             <p>
               At the end of the School of Applied Technology Bootcamp, I was
               offered to stay as an instructor. This was an opportunity too good
-              to turn down, so at the moment you can find me at{" "}
+              to turn down, so now you find me at{" "}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -418,7 +415,7 @@ const Timeline = () => {
               >
                 Epicenter
               </a>
-              , where we are teacing the next batch of fantastic developers!
+              , where we're teaching the next batch of fantastic developers!
             </p>
           </div>
           <div
