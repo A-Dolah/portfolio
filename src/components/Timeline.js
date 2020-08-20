@@ -58,14 +58,14 @@ const Timeline = () => {
           }
         }
       }
-      promBrowser: file(relativePath: { eq: "images/prom.jpg" }) {
+      adamannikaBrowser: file(relativePath: { eq: "images/adamannika.jpg" }) {
         childImageSharp {
           fixed(width: 200, height: 200, quality: 100) {
             ...GatsbyImageSharpFixed
           }
         }
       }
-      promMobile: file(relativePath: { eq: "images/prom.jpg" }) {
+      adamannikaMobile: file(relativePath: { eq: "images/adamannika.jpg" }) {
         childImageSharp {
           fixed(width: 120, quality: 100) {
             ...GatsbyImageSharpFixed
@@ -141,18 +141,17 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.one ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.one ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2010</h1>
             <p>
-              Graduated the Science studies and Physical education programme at
-              Polhemskolan (upper secondary school) in Lund. I'm in the bottom
-              left.
+              I graduated the Science studies and Physical education programme at
+              Polhemskolan (upper secondary school) in Lund. At the time I player a lot of football and saxophone.
             </p>
             <Img
               fixed={
@@ -166,7 +165,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.one ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -178,17 +177,16 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.two ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.two ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2011</h1>
             <p>
-              Started my Bachelor of Laws at Uppsala University. Here is me, my
-              sister and my dad in the moving truck on our way to Uppsala.
+              This was the year when I started my Bachelor of Laws at Uppsala University. Here is me, my sister and my dad in the moving truck on our way to Uppsala.
             </p>
             <Img
               fixed={
@@ -202,7 +200,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.two ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -214,22 +212,21 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.three ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.three ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2014</h1>
             <p>
-              Continued with my Master of Laws at Uppsala University. During
-              this time I met my lovely girlfriend Annika (this was not the
-              occasion though).
+              After finishing my Bachelor I continued with my Master of Laws at Uppsala University. During
+              this time I met my lovely girlfriend Annika.
             </p>
             <Img
               fixed={
-                data[`prom${pictureDimensionExtension}`].childImageSharp.fixed
+                data[`adamannika${pictureDimensionExtension}`].childImageSharp.fixed
               }
               className={timelineStyles.image}
               alt="couple on prom"
@@ -238,7 +235,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.three ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -250,18 +247,17 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.four ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.four ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2015</h1>
             <p>
-              Graduated from Uppsala University in June. The same summer I
-              started to work for the law firm Mannheimer Swartling. That's my
-              brother to the right!
+              I graduated from Uppsala University in June. The same summer I
+              started to work for the biggest law firm in the Nordics - Mannheimer Swartling. This picture includes all of my family expect for my mom who couldn't attend my graduation, sadly!
             </p>
             <Img
               fixed={
@@ -275,7 +271,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.four ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -287,15 +283,15 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.five ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.five ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2016-2017</h1>
-            <p>During this time I did my clerkship at Lund District Court.</p>
+            <p>During this time I did my clerkship at Lund District Court. It was a very humbling experience working at a District Court. The diversity of people that you encounter at a court is incredible, and you learn so much, not only from a legal perspective, but also from a societial perspective.</p>
             <Img
               fixed={
                 data[`lundsTR${pictureDimensionExtension}`].childImageSharp
@@ -308,7 +304,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.five ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -320,12 +316,12 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.six ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.six ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2018</h1>
             <p>
@@ -346,7 +342,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.six ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -358,12 +354,12 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.seven ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.seven ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2019</h1>
             <p>
@@ -391,7 +387,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.seven ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>
@@ -403,12 +399,12 @@ const Timeline = () => {
         <div
           className={`${timelineStyles.divContainer} ${
             visible.eight ? timelineStyles.show : ""
-          }`}
+            }`}
         >
           <div
             className={`${timelineStyles.content} ${
               visible.eight ? timelineStyles.showContent : ""
-            }`}
+              }`}
           >
             <h1>2020</h1>
             <p>
@@ -428,7 +424,7 @@ const Timeline = () => {
           <div
             className={`${timelineStyles.circle} ${
               visible.eight ? timelineStyles.show : ""
-            }`}
+              }`}
           ></div>
         </div>
       </VizSensor>

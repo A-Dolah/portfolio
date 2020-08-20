@@ -22,11 +22,11 @@ const ContactPage = () => {
       >
         <input type="hidden" name="form-name" value="contact" />
         <p className={contactStyles.p}>Your Name:</p>
-        <input type="text" name="name" />
+        <input type="text" name="name" required />
         <p className={contactStyles.p}>Your Email:</p>
-        <input type="email" name="email" />
+        <input type="email" name="email" required />
         <p className={contactStyles.p}>Message:</p>
-        <textarea name="message"></textarea>
+        <textarea name="message" required></textarea>
         <button type="submit">Send</button>
       </form>
     </Layout>

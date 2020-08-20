@@ -21,7 +21,6 @@
 .modal {
   position: relative;
   height: 30vh;
-  width: 50vw;
   color: $color-white;
   background: $color-lightred;
   background-clip: padding-box;
@@ -33,6 +32,7 @@
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  padding: 2rem;
 }
 
 .modal::-webkit-scrollbar {

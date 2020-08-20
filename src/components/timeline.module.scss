@@ -24,7 +24,8 @@
       width: 85%;
       p {
         font-weight: 100;
-        font-style: italic;
+        font-size: 1.15rem;
+        
       }
 
       a {
@@ -66,7 +67,7 @@
     .circle {
       left: calc(100% - 6px);
       @media screen and (min-width: $break-small) {
-        left: calc(100% - 10px);
+        left: calc(100% - 7px);
       }
     }
     .content {
@@ -83,7 +84,7 @@
     width: 2vh;
     height: 2vh;
     border-radius: 50%;
-    border: 2px solid $color-darkred;
+    border: 2px solid $color-white;
     background-color: $color-turquoise;
     top: 0;
   }

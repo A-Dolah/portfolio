@@ -14,6 +14,13 @@ const Portfolio = () => {
           }
         }
       }
+      snapList: file(relativePath: { eq: "images/snaplist.jpg" }) {
+        childImageSharp {
+          fixed(width: 250, height: 185, quality: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
     }
   `)
   return (
@@ -28,22 +35,16 @@ const Portfolio = () => {
           />
         </div>
       </Link>
-      <div className={portfolioStyles.container}>
-        <p className={portfolioStyles.paragraph}>Receipting</p>
-        <Img
-          fixed={data.portfolio.childImageSharp.fixed}
-          className={portfolioStyles.image}
-          alt="portfolio picture"
-        />
-      </div>
-      <div className={portfolioStyles.container}>
-        <p className={portfolioStyles.paragraph}>Hackday</p>
-        <Img
-          fixed={data.portfolio.childImageSharp.fixed}
-          className={portfolioStyles.image}
-          alt="portfolio picture"
-        />
-      </div>
+      <Link to="/blog/snap-list">
+        <div className={portfolioStyles.container}>
+          <p className={portfolioStyles.paragraph}>Snap List</p>
+          <Img
+            fixed={data.snapList.childImageSharp.fixed}
+            className={portfolioStyles.image}
+            alt="portfolio picture"
+          />
+        </div>
+      </Link>
     </section>
   )
 }

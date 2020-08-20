@@ -99,7 +99,6 @@ const IndexPage = () => {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          action="/success"
         >
           <input type="hidden" name="form-name" value="greeting" />
           {visibleQuestionLetters.length - 1 === questionString.length && (
@@ -121,8 +120,8 @@ const IndexPage = () => {
               </Link>
             </button>
           ) : (
-            <div className={indexStyles.buttonPlaceholder} />
-          )}
+              <div className={indexStyles.buttonPlaceholder} />
+            )}
         </form>
       </section>
     </Layout>
