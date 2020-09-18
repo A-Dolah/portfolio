@@ -4,6 +4,8 @@ module.exports = {
   siteMetadata: {
     title: "Adam Dolah",
     author: "Adam Dolah",
+    description: "Fullstack Web Developer",
+    siteUrl: "https://www.adamdolah.com",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
