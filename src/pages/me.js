@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Head from "../components/Head"
+import SEO from "../components/SEO"
 import ContentHeader from "../components/ContentHeader"
 import Timeline from "../components/Timeline"
 import Portfolio from "../components/Portfolio"
@@ -15,7 +15,7 @@ const AboutPage = () => {
   const paragraph = "Who I am and what I made"
   return (
     <Layout>
-      <Head title="About" />
+      <SEO title="About" />
       <ContentHeader title={title} paragraph={paragraph} />
       <section className={meStyles.content}>
         <AboutHeader text="Timeline" />

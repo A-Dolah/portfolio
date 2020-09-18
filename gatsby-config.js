@@ -6,6 +6,16 @@ module.exports = {
     author: "Adam Dolah",
     description: "Fullstack Web Developer",
     siteUrl: "https://www.adamdolah.com",
+    keywords: [
+      "JavaScript",
+      "Web Developer",
+      "Adam Dolah",
+      "Lawyer",
+      "Sweden",
+      "Stockholm",
+      "Fullstack",
+      "full stack",
+    ],
   },
   plugins: [
     "gatsby-plugin-react-helmet",

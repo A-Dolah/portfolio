@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import Head from "../components/Head"
+import SEO from "../components/SEO"
 import ContentHeader from "../components/ContentHeader"
 import Pager from "../components/Pager"
 
@@ -37,7 +37,7 @@ const blogList = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Head title="Blog" />
+      <SEO title="Blog Posts" />
       <ContentHeader title={title} paragraph={paragraph} />
       <ol className={blogStyles.posts}>
         {data.allContentfulBlogPost.edges.map((edge, index) => {

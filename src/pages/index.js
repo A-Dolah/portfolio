@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/Layout"
-import Head from "../components/Head"
+import SEO from "../components/SEO"
 
 import indexStyles from "./index.module.scss"
 
@@ -68,7 +68,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Head title="Home" />
+      <SEO title="Home" />
       <section className={indexStyles.section}>
         <h1>
           {visibleHeaderLetters.length > 0 &&
@@ -114,16 +114,18 @@ const IndexPage = () => {
             />
           )}
           {userInput ? (
-            <button type="submit" className={indexStyles.submit} onClick={() => console.log('clicked')}>
-
+            <button
+              type="submit"
+              className={indexStyles.submit}
+              onClick={() => console.log("clicked")}
+            >
               <Link to="/success" state={{ modal: true }}>
                 Let me know!
-            </Link>
+              </Link>
             </button>
-
           ) : (
-              <div className={indexStyles.buttonPlaceholder} />
-            )}
+            <div className={indexStyles.buttonPlaceholder} />
+          )}
         </form>
       </section>
     </Layout>

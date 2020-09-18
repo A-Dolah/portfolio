@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Prism from "prismjs"
-import Head from "../components/Head"
+import SEO from "../components/SEO"
 import Layout from "../components/Layout"
 import ContentHeader from "../components/ContentHeader"
 
@@ -16,6 +16,11 @@ export const query = graphql`
       publishedDate(formatString: "MMMM Do, YYYY")
       body {
         json
+      }
+      image {
+        file {
+          url
+        }
       }
     }
   }
@@ -43,7 +48,10 @@ const Blog = props => {
   }
   return (
     <Layout>
-      <Head title={props.data.contentfulBlogPost.title} />
+      <SEO
+        title={props.data.contentfulBlogPost.title}
+        description={props.data.contentfulBlogPost.image.file.url}
+      />
       <ContentHeader
         title={props.data.contentfulBlogPost.title}
         paragraph={props.data.contentfulBlogPost.publishedDate}
