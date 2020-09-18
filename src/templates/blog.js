@@ -18,8 +18,8 @@ export const query = graphql`
         json
       }
       image {
-        file {
-          url
+        fixed {
+          src
         }
       }
     }
@@ -50,7 +50,7 @@ const Blog = props => {
     <Layout>
       <SEO
         title={props.data.contentfulBlogPost.title}
-        description={props.data.contentfulBlogPost.image.file.url}
+        description={props.data.contentfulBlogPost.image.fixed}
       />
       <ContentHeader
         title={props.data.contentfulBlogPost.title}
