@@ -112,7 +112,7 @@ const IndexPage = () => {
               type="text"
               name="greeting"
               className={indexStyles.userAnswer}
-              onKeyUp={e => {
+              onChange={e => {
                 setUserInput(e.target.value)
               }}
               autoFocus
