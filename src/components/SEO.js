@@ -22,7 +22,7 @@ const SEO = ({ description, lang, meta, image: metaImage, title }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const image = metaImage ? metaImage : null
+  const image = metaImage.src ? metaImage.src.replace("//", "") : null
 
   return (
     <Helmet

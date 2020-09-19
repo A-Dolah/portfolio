@@ -50,7 +50,7 @@ const Blog = props => {
     <Layout>
       <SEO
         title={props.data.contentfulBlogPost.title}
-        description={props.data.contentfulBlogPost.image.fixed}
+        image={props.data.contentfulBlogPost.image.resize}
       />
       <ContentHeader
         title={props.data.contentfulBlogPost.title}
