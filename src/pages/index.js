@@ -110,7 +110,7 @@ const IndexPage = () => {
           {visibleQuestionLetters.length - 1 === questionString.length && (
             <textarea
               type="text"
-              name="greeting"
+              name="user-input"
               className={indexStyles.userAnswer}
               onChange={e => {
                 setUserInput(e.target.value)
