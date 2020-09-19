@@ -46,7 +46,7 @@ const IndexPage = () => {
       visibleHeaderLetters.length - 1 === headerString.length &&
         visibleParagraphLetters.length === 1
         ? 900
-        : randomNumberInRange(2, 7)
+        : randomNumberInRange(20, 70)
     )
 
     if (visibleParagraphLetters.length - 1 === paragraphString.length) {
