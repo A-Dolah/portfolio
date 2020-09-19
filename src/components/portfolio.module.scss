@@ -1,19 +1,25 @@
 @import "base";
 
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+
 .section {
   margin-top: 3rem;
   display: grid;
+  justify-items: center;
   grid-gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  justify-items: center;
   .container {
     position: relative;
-    text-align: center;
-    color: white;
-    border-radius: 5px;
     display: grid;
-    opacity: 0.6;
     width: 250px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    opacity: 0.6;
     &:hover {
       opacity: 1;
       cursor: pointer;
@@ -27,15 +33,15 @@
   }
 
   .paragraph {
-    font-size: 1.5rem;
-    text-transform: uppercase;
     position: absolute;
-    margin: 0;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $color-light;
     z-index: 1;
     opacity: 0;
+    transform: translate(-50%, -50%);
   }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
@@ -56,7 +56,7 @@ const IndexPage = () => {
         (visibleParagraphLetters.length - 1 === paragraphString.length &&
           visibleQuestionLetters.length === 1)
         ? 900
-        : randomNumberInRange(20, 70)
+        : randomNumberInRange(2, 7)
     )
 
     if (visibleQuestionLetters.length - 1 === questionString.length) {
@@ -69,7 +69,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <section className={indexStyles.section}>
+      <section className={indexStyles.greetingSection}>
         <h1>
           {visibleHeaderLetters.length > 0 &&
             visibleHeaderLetters.map((letter, index) => (
@@ -99,6 +99,13 @@ const IndexPage = () => {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          onSubmit={e => {
+            e.preventDefault()
+            console.log("BEFORE nagivate")
+            navigate("/success", {
+              state: { modal: true },
+            })
+          }}
         >
           <input type="hidden" name="form-name" value="greeting" />
           {visibleQuestionLetters.length - 1 === questionString.length && (
@@ -114,20 +121,16 @@ const IndexPage = () => {
             />
           )}
           {userInput ? (
-            <button
-              type="submit"
-              className={indexStyles.submit}
-              onClick={() => console.log("clicked")}
-            >
-              <Link to="/success" state={{ modal: true }}>
-                Let me know!
-              </Link>
+            <button type="submit" className={indexStyles.submit}>
+              Let me know!
             </button>
           ) : (
             <div className={indexStyles.buttonPlaceholder} />
           )}
         </form>
       </section>
+      <div className={indexStyles.arrow} />
+      <section className={indexStyles.informationSection}></section>
     </Layout>
   )
 }

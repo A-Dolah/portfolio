@@ -6,17 +6,15 @@
 }
 .about-header {
   align-self: center;
-  border-bottom: 1px solid $color-lightred;
-  color: $color-white;
-  font-size: 1.4rem;
   margin: 0 0 2rem;
-  padding-bottom: 1vh;
   margin-top: 6rem;
-
+  padding-bottom: 1vh;
+  border-bottom: 1px solid $color-contrast;
+  color: $color-light;
+  font-size: 1.4rem;
   @media screen and (min-width: $break-small) {
     font-size: 1.8rem;
-  margin-top: 0;
-
+    margin-top: 0;
   }
 }
 

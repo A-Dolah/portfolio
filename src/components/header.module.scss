@@ -1,5 +1,11 @@
 @import "base";
 
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+
 .header {
   display: flex;
   flex-direction: column;
@@ -7,90 +13,82 @@
   justify-content: center;
   padding: 1.5rem 2rem 0 2rem;
   @media screen and (min-width: $break-large) {
-    border-bottom: 1px solid $color-white;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    border-bottom: 1px solid $color-light;
   }
 }
 
 .title {
-  color: $color-white;
+  color: $color-light;
   font-size: 2rem;
   text-decoration: none;
   text-transform: uppercase;
 }
 
 .nav-container {
-  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  margin-top: 1rem;
   label {
-    font-size: 2.5rem;
     display: none;
-    color: $color-lightred;
     outline-color: transparent;
+    font-size: 2.5rem;
+    color: $color-light;
   }
-
   input {
     display: none;
   }
-
   .nav-list {
     display: flex;
-    list-style-type: none;
     margin: 0;
+    list-style-type: none;
   }
-
   .nav-item {
-    color: $color-white;
-    font-size: 1.2rem;
     margin: 0 0.9rem;
+    color: $color-light;
+    font-size: 1.2rem;
     text-decoration: none;
   }
-
   .nav-item:hover {
-    color: $color-lightred;
+    color: $color-contrast;
   }
 
   .active-nav-item {
-    color: $color-turquoise;
+    color: $color-contrast;
   }
 
   @media only screen and (max-width: $break-small) {
     margin-top: 0;
-
     label {
       display: block;
       cursor: pointer;
     }
-
     .nav-item {
       font-size: 0.8rem;
     }
-
     .nav-list {
+      visibility: hidden;
       align-items: center;
       flex-direction: column;
-      height: 0;
       justify-content: space-evenly;
-      opacity: 0;
       padding: 0;
+      height: 0;
+      opacity: 0;
       transition: visibility 0s, opacity 2s linear, height 0.2s linear;
-      visibility: hidden;
     }
 
     input:checked + .nav-list {
       display: flex;
+      height: 20vh;
       visibility: visible;
       opacity: 1;
-      height: 20vh;
     }
 
     input:checked + label {
-      color: $color-turquoise;
+      color: $color-contrast;
     }
   }
 }

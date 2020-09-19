@@ -1,6 +1,12 @@
 @import "base";
 @import "../pages/success.scss";
 
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+
 .background {
   height: 100vh;
   width: 100vw;
@@ -8,17 +14,17 @@
 }
 
 .container {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  background-color: $color-darkpurple;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
-  margin: 0 auto;
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
   align-items: space-between;
+  margin: 0 auto;
+  min-height: 100vh;
+  // max-width: 1200px;
+  background-color: $color-main;
   overflow-y: scroll;
   overflow-x: hidden;
   @media only screen and (min-width: $break-large) {
@@ -28,7 +34,6 @@
 }
 
 .image-container {
-  background: blue;
   width: 100vw;
   height: 100vh;
   img {
@@ -37,14 +42,13 @@
 }
 
 .content {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  opacity: 1;
-  height: auto;
-  // overflow: scroll;
+  flex: 1;
   padding: 2rem;
+  height: auto;
+  opacity: 1;
 }
 
 ::-webkit-scrollbar {

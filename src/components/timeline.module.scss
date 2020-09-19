@@ -1,23 +1,27 @@
 @import "base";
 
+/* Positioning */
+/* Box-model */
+/* Typography */
+/* Visual */
+/* Misc */
+
 .section {
   display: flex;
   flex-direction: column;
-  font-size: 0.7rem;
   height: auto;
   padding-bottom: 2rem;
-
+  font-size: 0.7rem;
   @media screen and (min-width: $break-small) {
     font-size: 1rem;
   }
-
   .div-container {
-    color: $color-white;
+    position: relative;
     height: 25vh;
+    padding: 0 4vw;
+    color: $color-light;
     font-weight: 200;
     opacity: 0.2;
-    padding: 0 4vw;
-    position: relative;
     transition: opacity 1s linear;
     .content {
       position: absolute;
@@ -25,11 +29,10 @@
       p {
         font-weight: 100;
         font-size: 1.15rem;
-        
       }
 
       a {
-        color: $color-lightred;
+        color: $color-contrast;
         text-decoration: none;
       }
     }
@@ -43,11 +46,11 @@
   }
 
   .div-container:nth-child(odd) {
-    align-self: flex-end;
-    border-left: 1px solid $color-turquoise;
     left: 10;
     padding-right: 1px;
+    align-self: flex-end;
     width: 50%;
+    border-left: 1px solid $color-contrast;
     .circle {
       left: -1vh;
     }
@@ -61,7 +64,7 @@
   }
 
   .div-container:nth-child(even) {
-    border-right: 1px solid $color-turquoise;
+    border-right: 1px solid $color-contrast;
     padding-right: -1px;
     width: calc(50% + 1px);
     .circle {
@@ -84,8 +87,8 @@
     width: 2vh;
     height: 2vh;
     border-radius: 50%;
-    border: 2px solid $color-white;
-    background-color: $color-turquoise;
+    border: 2px solid $color-light;
+    background-color: $color-contrast;
     top: 0;
   }
 
