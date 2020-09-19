@@ -99,9 +99,7 @@ const IndexPage = () => {
           method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
-          onSubmit={e => {
-            e.preventDefault()
-            console.log("BEFORE nagivate")
+          onSubmit={() => {
             navigate("/success", {
               state: { modal: true },
             })
