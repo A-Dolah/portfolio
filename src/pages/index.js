@@ -96,6 +96,7 @@ const IndexPage = () => {
         </p>
         <form
           onSubmit={e => {
+            e.preventDefault()
             fetch("/", {
               method: "POST",
               headers: {
@@ -114,7 +115,6 @@ const IndexPage = () => {
                 })
               )
               .catch(error => alert(error))
-            e.preventDefault()
           }}
         >
           {visibleQuestionLetters.length - 1 === questionString.length && (
