@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { navigate } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import encode from "../utils/encode"
 
 import indexStyles from "./index.module.scss"
 
