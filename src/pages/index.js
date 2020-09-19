@@ -95,18 +95,28 @@ const IndexPage = () => {
             ))}
         </p>
         <form
-          name="greeting"
-          method="post"
-          action="/success"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={() => {
-            navigate("/success", {
-              state: { modal: true },
+          onSubmit={e => {
+            fetch("/", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+              },
+              body: encode({
+                "form-name": "greeting",
+                "user-input": userInput,
+              }),
             })
+              .then(() =>
+                navigate("/success", {
+                  state: {
+                    modal: true,
+                  },
+                })
+              )
+              .catch(error => alert(error))
+            e.preventDefault()
           }}
         >
-          <input type="hidden" name="form-name" value="greeting" />
           {visibleQuestionLetters.length - 1 === questionString.length && (
             <textarea
               type="text"
