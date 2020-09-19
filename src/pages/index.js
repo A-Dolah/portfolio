@@ -97,6 +97,7 @@ const IndexPage = () => {
         <form
           name="greeting"
           method="post"
+          action="/success"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           onSubmit={() => {
