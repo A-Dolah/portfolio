@@ -67,13 +67,6 @@ const IndexPage = () => {
 
   const netlifySubmit = e => {
     e.preventDefault()
-    console.log(
-      encode({
-        "form-name": "greeting",
-        "user-input": userInput,
-      }),
-      "LOGGING ENCODE"
-    )
     fetch("/", {
       method: "POST",
       headers: {
@@ -136,13 +129,11 @@ const IndexPage = () => {
             }}
             value={userInput}
           />
-          {userInput ? (
-            <button type="submit" className={indexStyles.submit}>
-              Let me know!
-            </button>
-          ) : (
-            <div className={indexStyles.buttonPlaceholder} />
-          )}
+          <button
+            type="submit"
+            className={indexStyles.submit}
+            value="Let Me Know!"
+          />
         </form>
       </section>
       <div className={indexStyles.arrow} />
