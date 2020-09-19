@@ -117,6 +117,7 @@ const IndexPage = () => {
               }}
               autoFocus
               maxLength={60}
+              value={userInput}
             />
           )}
           {userInput ? (
