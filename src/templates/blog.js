@@ -18,7 +18,7 @@ export const query = graphql`
         json
       }
       image {
-        fixed {
+        resize(width: 400) {
           src
         }
       }
