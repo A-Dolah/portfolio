@@ -65,6 +65,35 @@ const IndexPage = () => {
     }
   }
 
+  const netlifySubmit = e => {
+    e.preventDefault()
+    console.log(
+      encode({
+        "form-name": "greeting",
+        "user-input": userInput,
+      }),
+      "LOGGING ENCODE"
+    )
+    fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: encode({
+        "form-name": "greeting",
+        "user-input": userInput,
+      }),
+    })
+      .then(() =>
+        navigate("/success", {
+          state: {
+            modal: true,
+          },
+        })
+      )
+      .catch(error => alert(error))
+  }
+
   timerFunc(headerString, paragraphString, questionString)
 
   return (
@@ -95,31 +124,9 @@ const IndexPage = () => {
               <span key={index}>{letter}</span>
             ))}
         </p>
-        <form
-          onSubmit={e => {
-            e.preventDefault()
-            fetch("/", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-              },
-              body: encode({
-                "form-name": "greeting",
-                "user-input": userInput,
-              }),
-            })
-              .then(() =>
-                navigate("/success", {
-                  state: {
-                    modal: true,
-                  },
-                })
-              )
-              .catch(error => alert(error))
-          }}
-        >
+        <form onSubmit={netlifySubmit}>
           {visibleQuestionLetters.length - 1 === questionString.length && (
-            <textarea
+            <input
               type="text"
               name="user-input"
               className={indexStyles.userAnswer}
