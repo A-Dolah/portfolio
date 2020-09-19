@@ -26,14 +26,20 @@
     animation: blinkingText 1s infinite;
   }
   .user-answer {
+    visibility: hidden;
     height: 100%;
     width: 100%;
     border: none;
-    color: $color-light;
+    border-bottom: 1px solid $color-light;
     font-size: 32px;
     outline: none;
     background: $color-main;
+    color: $color-contrast;
   }
+  .active {
+    visibility: visible;
+  }
+
   .submit {
     margin-bottom: 1rem;
     height: 2rem;
@@ -65,9 +71,7 @@
       font-size: 1.8rem;
       line-height: 2.5rem;
     }
-    .user-answer {
-      color: $color-contrast;
-    }
+
     .blinking {
       font-size: 2.5rem;
     }

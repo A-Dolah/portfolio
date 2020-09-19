@@ -125,19 +125,17 @@ const IndexPage = () => {
             ))}
         </p>
         <form onSubmit={netlifySubmit}>
-          {visibleQuestionLetters.length - 1 === questionString.length && (
-            <input
-              type="text"
-              name="user-input"
-              className={indexStyles.userAnswer}
-              onChange={e => {
-                setUserInput(e.target.value)
-              }}
-              autoFocus
-              maxLength={60}
-              value={userInput}
-            />
-          )}
+          <input
+            name="user-input"
+            className={`${
+              indexStyles.userAnswer
+            } ${visibleQuestionLetters.length - 1 === questionString.length &&
+              indexStyles.active}`}
+            onChange={e => {
+              setUserInput(e.target.value)
+            }}
+            value={userInput}
+          />
           {userInput ? (
             <button type="submit" className={indexStyles.submit}>
               Let me know!
