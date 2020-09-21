@@ -1,17 +1,11 @@
 @import "base";
 
-/* Positioning */
-/* Box-model */
-/* Typography */
-/* Visual */
-/* Misc */
-
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 2rem 0 2rem;
+  padding: 0 2rem;
   @media screen and (min-width: $break-large) {
     flex-direction: row;
     justify-content: space-between;
@@ -20,11 +14,35 @@
   }
 }
 
-.title {
-  color: $color-light;
-  font-size: 2rem;
-  text-decoration: none;
-  text-transform: uppercase;
+.title-container {
+  .title {
+    color: $color-light;
+    font-size: 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:before {
+      animation: contentChange 10s ease-in-out infinite;
+      content: attr(data-title);
+    }
+
+    @keyframes contentChange {
+      0% {
+        content: attr(data-title);
+      }
+      25% {
+        content: attr(data-thai);
+      }
+      50% {
+        content: attr(data-title);
+      }
+      75% {
+        content: attr(data-thai);
+      }
+      100% {
+        content: attr(data-title);
+      }
+    }
+  }
 }
 
 .nav-container {
@@ -48,12 +66,24 @@
   }
   .nav-item {
     margin: 0 0.9rem;
-    color: $color-light;
     font-size: 1.2rem;
+    overflow: hidden;
+    background: linear-gradient(
+      to right,
+      $color-contrast,
+      $color-contrast 50%,
+      $color-light 50%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 500ms ease;
     text-decoration: none;
-  }
-  .nav-item:hover {
-    color: $color-contrast;
+    &:hover {
+      background-position: 0 100%;
+    }
   }
 
   .active-nav-item {

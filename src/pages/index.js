@@ -1,8 +1,7 @@
 import React, { useState } from "react"
-import { navigate } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import encode from "../utils/encode"
+import InformationCard from "../components/InformationCard"
 
 import indexStyles from "./index.module.scss"
 
@@ -80,7 +79,23 @@ const IndexPage = () => {
         </p>
       </section>
       <div className={indexStyles.arrow} />
-      <section className={indexStyles.informationSection}></section>
+      <section className={indexStyles.informationSection}>
+        <InformationCard
+          title="I AM"
+          paragraph="I'm a fullstack web developer based in Stockholm. I've previously been practicing business law before becoming a professional web developer. I do fullstack JavaScript with React as my frontend framework of choice and Node.js as my backend runtime."
+          link="/me"
+        />
+        <InformationCard
+          title="BLOG"
+          paragraph="This site is mainly a place where I collect things I've written and resources I like."
+          link="/blog"
+        />
+        <InformationCard
+          title="CONTACT"
+          paragraph="If you want to get in touch, please use the contact form and I'll get back to you shortly."
+          link="/contact"
+        />
+      </section>
     </Layout>
   )
 }

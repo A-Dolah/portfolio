@@ -9,16 +9,20 @@ const Header = () => {
       site {
         siteMetadata {
           title
+          thaiTitle
         }
       }
     }
   `)
   return (
     <header className={headerStyles.header}>
-      <h1>
-        <Link className={headerStyles.title} to="/">
-          {data.site.siteMetadata.title}
-        </Link>
+      <h1 className={headerStyles.titleContainer}>
+        <Link
+          className={headerStyles.title}
+          to="/"
+          data-title={data.site.siteMetadata.title}
+          data-thai={data.site.siteMetadata.thaiTitle}
+        ></Link>
       </h1>
       <nav className={headerStyles.navContainer}>
         <label htmlFor="toggle">&#9776;</label>
