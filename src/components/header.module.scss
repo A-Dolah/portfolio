@@ -21,7 +21,7 @@
     text-decoration: none;
     text-transform: uppercase;
     &:before {
-      animation: contentChange 10s ease-in-out infinite;
+      animation: contentChange 50s ease-in-out infinite;
       content: attr(data-title);
     }
 
