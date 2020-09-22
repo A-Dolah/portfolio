@@ -13,7 +13,6 @@
   margin-top: 2rem;
   width: 100%;
   border: 1px solid $color-light;
-
   a {
     display: flex;
     justify-content: space-between;
@@ -28,7 +27,9 @@
   a:hover {
     background: $color-contrast;
   }
-
+  &:first-child {
+    margin: 0;
+  }
   .aside {
     display: flex;
     flex-direction: column;
@@ -40,13 +41,13 @@
     font-size: 1rem;
   }
   p {
-    color: $color-main;
+    color: $color-light;
     font-size: 0.7rem;
     font-style: italic;
   }
 
   @media screen and (min-width: $break-small) {
-    width: 80%;
+    width: 50%;
     margin-top: 0.9rem 0;
   }
   h2 {
