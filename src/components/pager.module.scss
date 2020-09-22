@@ -1,11 +1,5 @@
 @import "base";
 
-/* Positioning */
-/* Box-model */
-/* Typography */
-/* Visual */
-/* Misc */
-
 .container {
   display: flex;
   justify-content: center;
@@ -15,11 +9,12 @@
   a {
     color: $color-light;
     margin: 0 0.9rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-decoration: none;
-    font-style: italic;
+    @media only screen and (min-width: $break-large) {
+      font-size: 2rem;
+    }
   }
-
   a:hover {
     color: $color-contrast;
   }

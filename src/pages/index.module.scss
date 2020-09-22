@@ -26,7 +26,6 @@
     color: $color-light;
     animation: blinkingText 1s infinite;
   }
-
   .active {
     visibility: visible;
   }
@@ -77,9 +76,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 4vh;
-  height: auto;
+  margin-bottom: -2rem;
+  height: 100%;
   background-color: $color-secondary;
   @media only screen and (min-width: $break-large) {
+    height: 55vh;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;

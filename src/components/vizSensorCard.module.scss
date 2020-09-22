@@ -1,0 +1,96 @@
+@import "base";
+
+.div-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 70vh;
+  padding: 0 4vw;
+  color: $color-light;
+  font-weight: 200;
+  opacity: 0.2;
+  transition: opacity 1s linear;
+  .content {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    p {
+      font-weight: 100;
+      font-size: 1.15rem;
+    }
+    a {
+      color: $color-contrast;
+      text-decoration: none;
+    }
+    @media screen and (min-width: $break-small) {
+      width: 400px;
+      height: 30vh;
+    }
+  }
+  @media screen and (min-width: $break-small) {
+    height: 30vh;
+    p {
+      line-height: 1.5rem;
+      letter-spacing: 0.02rem;
+    }
+  }
+}
+
+.div-container:nth-child(odd) {
+  @media screen and (min-width: $break-small) {
+    left: 10;
+    padding-right: 1px;
+    align-self: flex-end;
+    width: 50%;
+    border-left: 1px solid $color-contrast;
+    .circle {
+      left: -1vh;
+    }
+  }
+}
+
+.div-container:nth-child(even) {
+  @media screen and (min-width: $break-small) {
+    border-right: 1px solid $color-contrast;
+    padding-right: -1px;
+    width: calc(50% + 1px);
+    .circle {
+      left: calc(100% - 6px);
+      @media screen and (min-width: $break-small) {
+        left: calc(100% - 7px);
+      }
+    }
+    .content {
+      right: 100px;
+      transition: left 1s cubic-bezier(0.42, -0.02, 0.2, 1);
+    }
+    .show-content {
+      right: 100px;
+    }
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 2vh;
+  height: 2vh;
+  border-radius: 50%;
+  border: 2px solid $color-light;
+  background-color: $color-contrast;
+  top: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.circle:nth-child(even) {
+  left: 10vh;
+  right: 10vh;
+}
+
+.image {
+  object-fit: contain;
+}
