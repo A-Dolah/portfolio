@@ -3,9 +3,9 @@
 .section {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: auto;
-  padding-bottom: 2rem;
-  font-size: 0.7rem;
+  padding-bottom: 1rem;
   @media screen and (min-width: $break-small) {
     font-size: 1rem;
   }

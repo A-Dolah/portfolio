@@ -171,35 +171,7 @@ const Timeline = () => {
         year="2019"
         text="In 2019, I started to work for the tech-focused law firm Synch.
               This was also the year when I decided to follow my passion and
-              pursue a career in programming. I applied to
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://salt.study/'
-              >
-                School of Applied Technology
-              </a>
-              and all of a sudden everything changed!"
-        cardNumber="eight"
-        image="linkedin"
-        alt="picture of Linkedin post"
-      />
-      <VizSensorCard
-        visible={visible}
-        setVisible={setVisible}
-        pictureDimensionExtension={pictureDimensionExtension}
-        data={data}
-        year="2019"
-        text="In 2019, I started to work for the tech-focused law firm Synch.
-              This was also the year when I decided to follow my passion and
-              pursue a career in programming. I applied to
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://salt.study/'
-              >
-                School of Applied Technology
-              </a>
+              pursue a career in programming. I applied to School of Applied Technology
               and all of a sudden everything changed!"
         cardNumber="eight"
         image="linkedin"
@@ -213,15 +185,7 @@ const Timeline = () => {
         year="2020"
         text="At the end of the School of Applied Technology Bootcamp, I was
               offered to stay as an instructor. This was an opportunity too good
-              to turn down, so now you find me at
-              <a
-                target='_blank'
-                rel='noopener noreferrer'
-                href='https://weareepicenter.com/stockholm/'
-              >
-                Epicenter
-              </a>
-              , where we're teaching the next batch of fantastic developers!"
+              to turn down, so now you find me at Epicenter, where we're teaching the next batch of fantastic developers!"
         cardNumber="nine"
       />
     </section>

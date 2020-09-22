@@ -26,9 +26,10 @@
 .paragraph {
   margin: 0 0 5vh 0;
   padding: 0;
+  font-weight: 100;
   font-size: 1rem;
-  font-weight: 300;
-  line-height: 1.4rem;
+  line-height: 1.5rem;
+  letter-spacing: 1.2px;
 }
 
 @media screen and (min-width: $break-small) {
@@ -38,7 +39,7 @@
 
   .paragraph {
     line-height: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 300;
   }
 }

@@ -32,8 +32,8 @@ export const blogListQuery = graphql`
 `
 
 const readingList = ({ data, pageContext }) => {
-  const title = "Things others made"
-  const paragraph = "This is a collection of resources I find useful"
+  const title = "A place for resources made by others"
+  const paragraph = "A few tips on some great resources"
 
   return (
     <Layout>
