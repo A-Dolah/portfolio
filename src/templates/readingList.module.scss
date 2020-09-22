@@ -12,6 +12,8 @@
 .post {
   margin-top: 2rem;
   width: 100%;
+  border: 1px solid $color-light;
+
   a {
     display: flex;
     justify-content: space-between;
@@ -20,8 +22,8 @@
     height: 132px;
     color: $color-light;
     text-decoration: none;
-    background: $color-contrast;
     opacity: 1;
+    transition: all 1s ease;
   }
   a:hover {
     background: $color-contrast;

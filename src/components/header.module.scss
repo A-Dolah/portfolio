@@ -21,7 +21,7 @@
     text-decoration: none;
     text-transform: uppercase;
     &:before {
-      animation: contentChange 50s ease-in-out infinite;
+      animation: contentChange 100s ease-in-out infinite;
       content: attr(data-title);
     }
 
@@ -79,7 +79,7 @@
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     background-position: 100%;
-    transition: background-position 500ms ease;
+    transition: background-position 400ms ease;
     text-decoration: none;
     &:hover {
       background-position: 0 100%;
@@ -87,7 +87,7 @@
   }
 
   .active-nav-item {
-    color: $color-contrast;
+    background-position: 0 100%;
   }
 
   @media only screen and (max-width: $break-small) {
@@ -107,7 +107,7 @@
       padding: 0;
       height: 0;
       opacity: 0;
-      transition: visibility 0s, opacity 2s linear, height 0.2s linear;
+      transition: visibility 0s, opacity 1.5s linear, height 0.2s linear;
     }
 
     input:checked + .nav-list {

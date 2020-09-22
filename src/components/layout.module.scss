@@ -32,20 +32,13 @@
   }
 }
 
-.image-container {
-  width: 100vw;
-  height: 100vh;
-  img {
-    min-height: 100vh;
-  }
-}
-
 .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   flex: 1;
   padding: 0;
+  padding-bottom: 2rem;
   height: auto;
   opacity: 1;
 }

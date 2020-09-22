@@ -5,6 +5,7 @@
   margin-bottom: 4vh;
   padding: 0 7.5vw;
   height: 55vh;
+  max-width: 800px;
   h1,
   p {
     color: $color-light;
@@ -80,7 +81,7 @@
   background-color: $color-secondary;
   @media only screen and (min-width: $break-large) {
     flex-direction: row;
-    justify-content: center;
-    align-items: space-evenly;
+    justify-content: space-around;
+    align-items: center;
   }
 }

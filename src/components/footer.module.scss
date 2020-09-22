@@ -1,25 +1,22 @@
 @import "base";
 
-/* Positioning */
-/* Box-model */
-/* Typography */
-/* Visual */
-/* Misc */
-
 .footer {
   left: 0;
   right: 0;
   bottom: 0;
   width: 100%;
-  // max-width: 1200px;
-  margin: 0 auto;
-  padding: 3vh;
-  border-top: 0.5px solid $color-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5vh;
+  border-top: 1px solid $color-light;
   text-align: center;
   color: $color-light;
   background: $color-main;
   p {
-    margin: 0;
+    margin: 0.5rem;
+    font-weight: 200;
   }
 }
 
