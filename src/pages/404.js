@@ -11,7 +11,7 @@ const NotFound = () => {
     <Layout>
       <SEO title="404" />
       <ContentHeader title="404" paragraph="Page Not Found" />
-      <Link to="/home" className={notFoundStyles.link}>
+      <Link to="/" className={notFoundStyles.link}>
         Go Back To Landing
       </Link>
     </Layout>

@@ -1,4 +1,4 @@
-@import "../components/base";
+@import "../styles/index.scss";
 
 .greeting-section {
   margin-top: 3vh;
@@ -6,10 +6,6 @@
   padding: 0 7.5vw;
   height: 55vh;
   max-width: 800px;
-  h1,
-  p {
-    color: $color-light;
-  }
   h1 {
     margin-bottom: 3vh;
     font-size: 1.8rem;
@@ -23,7 +19,6 @@
   .blinking {
     font-size: 1.9rem;
     font-weight: 100;
-    color: $color-light;
     animation: blinkingText 1s infinite;
   }
   .active {

@@ -1,4 +1,4 @@
-@import "../components/base";
+@import "../styles/index.scss";
 
 .content-section {
   background-color: $color-light;
@@ -13,6 +13,7 @@
   h5,
   h6 {
     font-weight: 500;
+    color: #000000;
   }
 
   p,
@@ -20,10 +21,16 @@
   b,
   li,
   a {
-    font-family: "eb-garamond", serif;
-    letter-spacing: 0.5px;
-    line-height: 1.5rem;
     padding: 0;
+    font-family: "eb-garamond", serif;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.5px;
+    color: #000000;
+    @media screen and (min-width: $break-small) {
+      font-size: 1.1rem;
+      line-height: 1.5rem;
+    }
   }
   code,
   code > span,

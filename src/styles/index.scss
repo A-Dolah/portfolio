@@ -1,4 +1,11 @@
-@import "../pages/success.scss";
+$break-small: 400px;
+$break-large: 750px;
+
+$color-main: #111c33;
+$color-secondary: #101827;
+$color-contrast: #2d70ff;
+$color-light: #ffffff;
+$color-darkred: #ce6a6b;
 
 html {
   box-sizing: border-box;
@@ -15,4 +22,16 @@ body {
   box-sizing: inherit;
   font-family: "Oswald", serif;
   font-weight: 400;
+}
+
+h1,
+a,
+p {
+  color: $color-light;
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }

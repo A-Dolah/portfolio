@@ -1,4 +1,4 @@
-@import "base";
+@import "../styles/index.scss";
 
 .header {
   display: flex;
@@ -21,7 +21,7 @@
     text-decoration: none;
     text-transform: uppercase;
     &:before {
-      animation: contentChange 100s ease-in-out infinite;
+      animation: contentChange 70s ease-in-out infinite;
       content: attr(data-title);
     }
 

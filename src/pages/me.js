@@ -20,7 +20,6 @@ const AboutPage = () => {
       <section className={meStyles.content}>
         <AboutHeader text="The Timeline" />
         <Timeline />
-
         <AboutHeader text="Portfolio" />
         <Portfolio />
       </section>

@@ -1,4 +1,4 @@
-@import "base";
+@import "../styles/index.scss";
 
 .div-container {
   position: relative;
@@ -6,7 +6,6 @@
   flex-direction: column;
   align-items: center;
   height: 450px;
-  color: $color-light;
   font-weight: 200;
   opacity: 0.2;
   transition: opacity 1s linear;
@@ -28,7 +27,6 @@
       letter-spacing: 1.2px;
     }
     a {
-      color: $color-contrast;
       text-decoration: none;
     }
     @media screen and (min-width: $break-small) {

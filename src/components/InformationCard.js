@@ -1,15 +1,17 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 import informationCardStyles from "./informationCard.module.scss"
 
-const InformationCard = ({ title, paragraph, link }) => {
+const InformationCard = ({ title, paragraph, link, img }) => {
   return (
     <div className={informationCardStyles.container}>
-      <h1 className={informationCardStyles.title}>
-        <Link to={link}>{title}</Link>
-      </h1>
-      <br />
-      <p className={informationCardStyles.paragraph}>{paragraph}</p>
+      <Link to={link}>
+        <h1 className={informationCardStyles.title}>{title}</h1>
+        <br />
+        <p className={informationCardStyles.paragraph}>{paragraph}</p>
+        {img && <Img fluid={img} objectFit="contain" />}
+      </Link>
     </div>
   )
 }
