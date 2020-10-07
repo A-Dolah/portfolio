@@ -4,7 +4,7 @@
     [
       "prismjs",
       {
-        "languages": ["javascript"],
+        "languages": ["javascript", "jsx", "css", "markup"],
         "plugins": ["show-language", "copy-to-clipboard"],
         "theme": "tomorrow",
         "css": true
