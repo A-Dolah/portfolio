@@ -4,10 +4,10 @@
   a {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     height: 100%;
   }
-  padding: 2rem;
+  padding: 1.5rem;
   width: auto;
   height: auto;
   display: flex;

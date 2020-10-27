@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import InformationCard from "../components/InformationCard"
@@ -8,6 +8,7 @@ import indexStyles from "./index.module.scss"
 const IndexPage = () => {
   const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
   const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([])
+  const [typing, setTyping] = useState(false)
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
@@ -53,7 +54,9 @@ const IndexPage = () => {
     }
   }
 
-  timerFunc(headerString, paragraphString)
+  useEffect(() => {
+    timerFunc(headerString, paragraphString)
+  }, [visibleHeaderLetters, visibleParagraphLetters])
 
   return (
     <Layout>
