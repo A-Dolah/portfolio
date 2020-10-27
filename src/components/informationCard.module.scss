@@ -1,30 +1,36 @@
 @import "../styles/index.scss";
 
 .container {
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
   padding: 2rem;
   width: auto;
   height: auto;
-  margin-bottom: 3rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  text-align: center;
   .title {
     padding: 0;
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     letter-spacing: 5px;
     a {
       text-decoration: none;
       color: $color-light;
+      text-align: center;
     }
   }
   .paragraph {
     padding: 0;
-    margin: 0;
-    margin-bottom: 3rem;
+    margin: 0 0 1rem 0;
     font-weight: 100;
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.6rem;
     letter-spacing: 1.2px;
     color: $color-light;
   }

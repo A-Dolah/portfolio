@@ -10,7 +10,7 @@ const InformationCard = ({ title, paragraph, link, img }) => {
         <h1 className={informationCardStyles.title}>{title}</h1>
         <br />
         <p className={informationCardStyles.paragraph}>{paragraph}</p>
-        {img && <Img fluid={img} objectFit="contain" />}
+        {img && <Img fluid={img} objectFit="cover" />}
       </Link>
     </div>
   )

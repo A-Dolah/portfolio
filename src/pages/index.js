@@ -78,8 +78,11 @@ const IndexPage = () => {
           )}
         </p>
       </section>
-      <div className={indexStyles.arrow} />
-      <section className={indexStyles.informationSection}>
+      <a className={indexStyles.arrow} href="#information-section" />
+      <section
+        id="information-section"
+        className={indexStyles.informationSection}
+      >
         <InformationCard
           title="I AM"
           paragraph="I'm a fullstack web developer based in Stockholm. I've previously been practicing business law before becoming a professional web developer. I do fullstack JavaScript with React as my frontend framework of choice and Node.js as my backend runtime."
