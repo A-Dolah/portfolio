@@ -8,7 +8,6 @@ import indexStyles from "./index.module.scss"
 const IndexPage = () => {
   const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
   const [visibleParagraphLetters, setVisibleParagraphLetters] = useState([])
-  const [typing, setTyping] = useState(false)
 
   const headerString = "Hi, I'm Adam. Welcome!"
   const paragraphString =
@@ -58,6 +57,11 @@ const IndexPage = () => {
     timerFunc(headerString, paragraphString)
   }, [visibleHeaderLetters, visibleParagraphLetters])
 
+  const smoothScroll = element =>
+    document.querySelector(element).scrollIntoView({
+      behavior: "smooth",
+    })
+
   return (
     <Layout>
       <SEO title="Home" />
@@ -81,7 +85,11 @@ const IndexPage = () => {
           )}
         </p>
       </section>
-      <a className={indexStyles.arrow} href="#information-section" />
+      <button
+        type="button"
+        className={indexStyles.arrow}
+        onClick={() => smoothScroll("#information-section")}
+      />
       <section
         id="information-section"
         className={indexStyles.informationSection}
