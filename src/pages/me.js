@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import ContentHeader from "../components/ContentHeader"
 import Timeline from "../components/Timeline"
+import TechStack from "../components/TechStack"
 import Portfolio from "../components/Portfolio"
 import meStyles from "./me.module.scss"
 
@@ -20,6 +21,8 @@ const AboutPage = () => {
       <section className={meStyles.content}>
         <AboutHeader text="The Timeline" />
         <Timeline />
+        <AboutHeader text="Tech Stack" />
+        <TechStack />
         <AboutHeader text="Portfolio" />
         <Portfolio />
       </section>

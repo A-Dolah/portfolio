@@ -6,12 +6,12 @@
 }
 .about-header {
   align-self: center;
-  margin: 0 0 2rem 0;
+  margin: 2rem 0 1rem 0;
   padding-bottom: 1vh;
   font-size: 1.4rem;
   @media screen and (min-width: $break-small) {
     font-size: 1.8rem;
-    margin-top: 2rem;
+    margin: 4rem 0 1rem 0;
   }
 }
 

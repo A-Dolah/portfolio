@@ -1,0 +1,11 @@
+@import "../styles/index.scss";
+
+.section {
+  margin: 0 auto;
+  width: 70vw;
+  display: grid;
+  grid-gap: 30px;
+  @media screen and (min-width: $break-small) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
