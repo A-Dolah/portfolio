@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import Img from "gatsby-image/withIEPolyfill"
-import informationCardStyles from "./informationCard.module.scss"
+import * as informationCardStyles from "./informationCard.module.scss"
 
 const InformationCard = ({ title, paragraph, link, img }) => {
   return (

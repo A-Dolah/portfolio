@@ -1,0 +1,54 @@
+name: pr_screenshots_action
+# This job should run on PR to test
+on:
+  pull_request:
+    branches:
+      - test
+
+jobs:
+  pr_screenshots_job:
+    name: pr_screenshots_job
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [15.x]
+
+    steps:
+      - name: Checkout branch which triggered job
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - run: npm install
+      - run: npm run build --if-present
+
+      - name: Checkout Insurely custom Github actions repo
+        uses: actions/checkout@v2
+        with:
+          repository: insurely/insurely_ui_test_actions
+          token: ${{ secrets.GIT_HUB_TOKEN }} # Must be stored in GitHub secrets
+          path: .github/actions/screenshot-action
+
+      - name: Run screenshot gathering and build HTML
+        uses: ./.github/actions/screenshot-action/pr_screenshots_action
+        with:
+          application: test_runner # Specify frontend app
+          environment: localhost # At the moment the testing tool only supports test
+          # The below arguments must be stored in Github secrets
+          aws-region: ${{ secrets.AWS_REGION }}
+          aws-access-id: ${{ secrets.AWS_ACCESS_ID }}
+          aws-secret-key: ${{ secrets.AWS_SECRET_KEY }}
+          aws-bucket-base-name: ${{ secrets.AWS_BUCKET_BASE_NAME }}
+
+      - name: Save showroom.html as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: showroom-html-page
+          path: ./showroom.html

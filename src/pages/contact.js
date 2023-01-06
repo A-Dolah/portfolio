@@ -1,9 +1,9 @@
 import React from "react"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 import ContentHeader from "../components/ContentHeader"
 
-import contactStyles from "./contact.module.scss"
+import * as contactStyles from "./contact.module.scss"
 
 const ContactPage = () => {
   const title = "If you have any questions whatsoever"
@@ -11,7 +11,7 @@ const ContactPage = () => {
 
   return (
     <Layout>
-      <SEO title="Contact" />
+      <Seo title="Contact" />
       <ContentHeader title={title} paragraph={paragraph} />
       <form
         name="contact"

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import VizSensorCard from "./VizSensorCard"
 
-import timelineStyles from "./timeline.module.scss"
+import * as timelineStyles from "./timeline.module.scss"
 
 const Timeline = () => {
   const [visible, setVisible] = useState({
@@ -17,72 +17,67 @@ const Timeline = () => {
     nine: false,
     ten: false,
   })
-  const [pictureDimensionExtension, setPictureDimensionExtension] = useState(
-    "Browser"
-  )
+  const [pictureDimensionExtension, setPictureDimensionExtension] =
+    useState("Browser")
+
+  const onWindowResize = () => {
+    if (window.innerWidth < 1100) {
+      setPictureDimensionExtension("Mobile")
+    } else {
+      setPictureDimensionExtension("Browser")
+    }
+  }
 
   useEffect(() => {
-    if (window.innerWidth < 630) {
+    if (window.innerWidth < 1100) {
       setPictureDimensionExtension("Mobile")
     }
+
+    window.addEventListener("resize", onWindowResize)
+
+    return () => window.removeEventListener("resize", onWindowResize)
   }, [setPictureDimensionExtension])
 
   const data = useStaticQuery(graphql`
     query {
       student: file(relativePath: { eq: "images/student.jpg" }) {
         childImageSharp {
-          fixed(width: 250, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       uppsala: file(relativePath: { eq: "images/car.jpg" }) {
         childImageSharp {
-          fixed(width: 200, height: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       adamannika: file(relativePath: { eq: "images/adamannika.jpg" }) {
         childImageSharp {
-          fixed(width: 200, height: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       graduation: file(relativePath: { eq: "images/graduation.jpg" }) {
         childImageSharp {
-          fixed(width: 200, height: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       lundsTR: file(relativePath: { eq: "images/LundsTR.jpg" }) {
         childImageSharp {
-          fixed(width: 200, height: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       evernote: file(relativePath: { eq: "images/evernote.jpg" }) {
         childImageSharp {
-          fixed(width: 250, height: 200, quality: 80) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       linkedin: file(relativePath: { eq: "images/linkedin.jpg" }) {
         childImageSharp {
-          fixed(width: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
       saltpic: file(relativePath: { eq: "images/saltpic.jpg" }) {
         childImageSharp {
-          fixed(width: 200, quality: 100) {
-            ...GatsbyImageSharpFixed
-          }
+          gatsbyImageData(width: 400, formats: [JPG])
         }
       }
     }
@@ -99,10 +94,12 @@ const Timeline = () => {
         text="This year I graduated the Science studies and Physical education programme
               at Polhemskolan (upper secondary school) in Lund."
         cardNumber="one"
+        order={1}
         image="student"
         alt="picture of high school graduation"
       />
       <VizSensorCard
+        gridArea="two"
         visible={visible}
         setVisible={setVisible}
         pictureDimensionExtension={pictureDimensionExtension}
@@ -112,6 +109,7 @@ const Timeline = () => {
               University. Here is me, my sister and my dad in the moving truck
               on our way to Uppsala."
         cardNumber="two"
+        order={2}
         image="uppsala"
         alt="picture of car ride with family"
       />
@@ -125,6 +123,7 @@ const Timeline = () => {
               Uppsala University. This was also the year during which I met my lovely girlfriend
               Annika."
         cardNumber="three"
+        order={3}
         image="adamannika"
         alt="picture of Adam with girlfriend"
       />
@@ -137,6 +136,7 @@ const Timeline = () => {
         text="I graduated from Uppsala University in June 2015. The same summer I
               started to work for Mannheimer Swartling which is the biggest law firm in the Nordics."
         cardNumber="four"
+        order={4}
         image="graduation"
         alt="picture of graduation in Uppsala"
       />
@@ -148,6 +148,7 @@ const Timeline = () => {
         year="2016-2017"
         text="During this period I did my clerkship at Lund District Court. This was an important learning experience, not only from a legal perspective but also through meeting so many different kinds of people from all over society."
         cardNumber="five"
+        order={5}
         image="lundsTR"
         alt="picture of Lund District Court"
       />
@@ -161,7 +162,8 @@ const Timeline = () => {
               This was also the year I wrote my first line of code. I even have
               an Evernote note from 2018-09-11 with the heading 'First day of
               learning to code'"
-        cardNumber="seven"
+        cardNumber="six"
+        order={6}
         image="evernote"
         alt="picture of Evernote note"
       />
@@ -175,7 +177,8 @@ const Timeline = () => {
               This was also the year when I decided to follow my passion and
               pursue a career in programming. I applied to School of Applied Technology
               and all of a sudden I was on a new career path!"
-        cardNumber="eight"
+        cardNumber="seven"
+        order={7}
         image="linkedin"
         alt="picture of Linkedin post"
       />
@@ -188,7 +191,8 @@ const Timeline = () => {
         text="At the end of the School of Applied Technology Bootcamp, I was
               offered to stay as an instructor. This was an opportunity too good
               to turn down, so now you find me at Epicenter, where we're teaching the next batch of fantastic developers!"
-        cardNumber="nine"
+        cardNumber="eight"
+        order={8}
         image="saltpic"
         alt="picture of Adam at Salt giving lecture"
       />

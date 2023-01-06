@@ -12,4 +12,4 @@ I've written more about how and why I built the site [here](https://www.adamdola
 
 ---
 
-Adam
+Adam Dolah

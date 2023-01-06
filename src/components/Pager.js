@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import pagerStyles from "./pager.module.scss"
+import * as pagerStyles from "./pager.module.scss"
 
 const Pager = ({ pageContext }) => {
   const { previousPagePath, nextPagePath } = pageContext

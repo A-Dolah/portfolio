@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import portfolioStyles from "./portfolio.module.scss"
+import * as portfolioStyles from "./portfolio.module.scss"
 import InformationCard from "./InformationCard"
 
 const Portfolio = () => {

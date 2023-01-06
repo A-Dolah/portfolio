@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { RiCheckboxBlankCircleLine, RiCheckboxCircleLine } from "react-icons/ri"
 
-import techStackCardStyles from "./techStackCard.module.scss"
+import * as techStackCardStyles from "./techStackCard.module.scss"
 
 const TechStackCard = ({
   title,

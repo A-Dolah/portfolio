@@ -1,12 +1,43 @@
 @import "../styles/index.scss";
 
 .section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-areas:
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven"
+    "eight"
+    "nine"
+    "ten"
+    "eleven"
+    "twelve";
+  justify-items: start;
+  align-items: center;
+  align-content: center;
   height: auto;
   padding-bottom: 1rem;
-  @media screen and (min-width: $break-small) {
+  @media screen and (min-width: $break-largest) {
     font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-template-areas:
+      ". one"
+      "two ."
+      ". three"
+      "four ."
+      ". five"
+      "six ."
+      ". seven"
+      "eight ."
+      ". nine"
+      "ten ."
+      ". eleven"
+      "twelve .";
   }
 }

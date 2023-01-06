@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 import InformationCard from "../components/InformationCard"
 
-import indexStyles from "./index.module.scss"
+import * as indexStyles from "./index.module.scss"
 
 const IndexPage = () => {
   const [visibleHeaderLetters, setVisibleHeaderLetters] = useState([])
@@ -25,7 +25,7 @@ const IndexPage = () => {
     setStateFunction([...state, letterToPrint])
   }
 
-  const timerFunc = (headerString, paragraphString) => {
+  const timerFunc = useCallback((headerString, paragraphString) => {
     const timer = setTimeout(
       () => {
         if (visibleHeaderLetters.length <= headerString.length) {
@@ -51,11 +51,11 @@ const IndexPage = () => {
     if (visibleParagraphLetters.length - 1 === paragraphString.length) {
       clearInterval(timer)
     }
-  }
+  }, [visibleHeaderLetters, visibleParagraphLetters])
 
   useEffect(() => {
     timerFunc(headerString, paragraphString)
-  }, [visibleHeaderLetters, visibleParagraphLetters])
+  }, [timerFunc])
 
   const smoothScroll = element =>
     document.querySelector(element).scrollIntoView({
@@ -64,7 +64,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
       <section className={indexStyles.greetingSection}>
         <h1>
           {visibleHeaderLetters.length > 0 &&

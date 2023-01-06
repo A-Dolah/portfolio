@@ -3,11 +3,11 @@ import { graphql } from "gatsby"
 import { BLOCKS } from "@contentful/rich-text-types"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import Prism from "prismjs"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 import Layout from "../components/Layout"
 import ContentHeader from "../components/ContentHeader"
 
-import blogStyles from "./blog.module.scss"
+import * as blogStyles from "./blog.module.scss"
 
 export const query = graphql`
   query($slug: String!) {
@@ -15,11 +15,11 @@ export const query = graphql`
       title
       publishedDate(formatString: "MMMM Do, YYYY")
       body {
-        json
+        raw
       }
       image {
-        resize(width: 400) {
-          src
+        file {
+          url
         }
       }
     }
@@ -32,11 +32,12 @@ const Blog = props => {
   })
   const options = {
     renderNode: {
-      [BLOCKS.EMBEDDED_ASSET]: node => {
-        const alt = node.data.target.fields.title["en-US"]
-        const url = node.data.target.fields.file["en-US"].url
-        return <img className={blogStyles.image} alt={alt} src={url} />
-      },
+      // [BLOCKS.EMBEDDED_ASSET]: node => {
+      //   console.log('NODE ASSET', node)
+      //   const alt = node.data.target.fields.title["en-US"]
+      //   const url = node.data.target.fields.file["en-US"].url
+      //   return <img alt={alt} src={url} />
+      // },
       [BLOCKS.QUOTE]: (node, children) => (
         <pre className="language-javascript">
           <code className="language-javascript">
@@ -46,9 +47,10 @@ const Blog = props => {
       ),
     },
   }
+
   return (
     <Layout>
-      <SEO
+      <Seo
         title={props.data.contentfulBlogPost.title}
         image={props.data.contentfulBlogPost.image.resize}
       />
@@ -58,7 +60,7 @@ const Blog = props => {
       />
       <section className={blogStyles.contentSection}>
         {documentToReactComponents(
-          props.data.contentfulBlogPost.body.json,
+          JSON.parse(props.data.contentfulBlogPost.body.raw),
           options
         )}
       </section>

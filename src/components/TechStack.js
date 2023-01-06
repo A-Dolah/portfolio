@@ -3,20 +3,22 @@ import TechStackCard from "./TechStackCard"
 import {
   SiReact,
   SiGatsby,
+  SiNextdotjs,
   SiHtml5,
   SiCss3,
   SiJavascript,
   SiTypescript,
-  SiNodeDotJs,
+  SiNodedotjs,
   SiDocker,
   SiGit,
   SiMongodb,
   SiPostgresql,
   SiCircleci,
   SiGraphql,
+  SiJava,
 } from "react-icons/si"
 
-import techStackStyles from "./techStack.module.scss"
+import * as techStackStyles from "./techStack.module.scss"
 
 const TechStack = () => {
   return (
@@ -33,6 +35,9 @@ const TechStack = () => {
       <TechStackCard title="React" checkedCircles={4} unCheckedCircles={2}>
         <SiReact size="30px" />
       </TechStackCard>
+      <TechStackCard title="Next.js" checkedCircles={4} unCheckedCircles={2}>
+        <SiNextdotjs size="30px" />
+      </TechStackCard>
       <TechStackCard title="Gatsby" checkedCircles={4} unCheckedCircles={2}>
         <SiGatsby size="30px" />
       </TechStackCard>
@@ -41,7 +46,7 @@ const TechStack = () => {
         checkedCircles={4}
         unCheckedCircles={2}
       >
-        <SiNodeDotJs size="30px" />
+        <SiNodedotjs size="30px" />
       </TechStackCard>
       <TechStackCard title="GraphQL" checkedCircles={2} unCheckedCircles={4}>
         <SiGraphql size="30px" />
@@ -52,17 +57,20 @@ const TechStack = () => {
       <TechStackCard title="Docker" checkedCircles={2} unCheckedCircles={4}>
         <SiDocker size="30px" />
       </TechStackCard>
-      <TechStackCard title="Git" checkedCircles={3} unCheckedCircles={3}>
+      <TechStackCard title="Git" checkedCircles={4} unCheckedCircles={2}>
         <SiGit size="30px" />
       </TechStackCard>
-      <TechStackCard title="CI/CD" checkedCircles={2} unCheckedCircles={4}>
+      <TechStackCard title="CI/CD" checkedCircles={3} unCheckedCircles={3}>
         <SiCircleci size="30px" />
       </TechStackCard>
       <TechStackCard title="MongoDB" checkedCircles={3} unCheckedCircles={3}>
         <SiMongodb size="30px" />
       </TechStackCard>
-      <TechStackCard title="PostgresQL" checkedCircles={2} unCheckedCircles={4}>
+      <TechStackCard title="PostgresQL" checkedCircles={3} unCheckedCircles={3}>
         <SiPostgresql size="30px" />
+      </TechStackCard>
+      <TechStackCard title="Java" checkedCircles={1} unCheckedCircles={5}>
+        <SiJava size="30px" />
       </TechStackCard>
     </section>
   )

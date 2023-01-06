@@ -1,10 +1,12 @@
 import React from "react"
 import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import VizSensor from "react-visibility-sensor"
 
-import vizSensorCardStyles from "./vizSensorCard.module.scss"
+import * as vizSensorCardStyles from "./vizSensorCard.module.scss"
 
 const VizSensorCard = ({
+  gridArea,
   visible,
   setVisible,
   pictureDimensionExtension,
@@ -12,17 +14,22 @@ const VizSensorCard = ({
   year,
   text,
   cardNumber,
-  image,
+  order,
+  image: imageName,
 }) => {
-  const onChange = isVisible => {
+  const onChange = (isVisible) => {
     setVisible({ ...visible, [cardNumber]: isVisible })
   }
+
+  const image = getImage(data[imageName])
+
   return (
     <VizSensor onChange={onChange} partialVisibility={true} minTopValue={400}>
       <div
+        style={{ gridArea: cardNumber }}
         className={`${vizSensorCardStyles.divContainer} ${
           visible[cardNumber] ? vizSensorCardStyles.show : ""
-        }`}
+        } ${order % 2 === 0 ? vizSensorCardStyles.even : ""}`}
       >
         <div
           className={`${vizSensorCardStyles.content} ${
@@ -31,13 +38,7 @@ const VizSensorCard = ({
         >
           <h1>{year}</h1>
           <p>{text}</p>
-          {image && (
-            <Img
-              fixed={image && data[image].childImageSharp.fixed}
-              className={vizSensorCardStyles.image}
-              alt="graduation image"
-            />
-          )}
+          {image && <GatsbyImage image={image} alt={imageName} />}
         </div>
         {pictureDimensionExtension === "Browser" && (
           <div

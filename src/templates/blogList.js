@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
-import SEO from "../components/SEO"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Seo from "../components/SEO"
 import ContentHeader from "../components/ContentHeader"
 import Pager from "../components/Pager"
 
-import blogStyles from "./blogList.module.scss"
+import * as blogStyles from "./blogList.module.scss"
 
 export const blogListQuery = graphql`
   query($skip: Int!, $limit: Int!) {
@@ -21,9 +21,7 @@ export const blogListQuery = graphql`
           slug
           publishedDate(formatString: "MMMM Do, YYYY")
           image {
-            fluid(maxWidth: 800, quality: 90) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+              gatsbyImageData(width: 800, quality: 90)
           }
         }
       }
@@ -38,12 +36,13 @@ const blogList = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title="Blog Posts" />
+      <Seo title="Blog Posts" />
       <ContentHeader title={title} paragraph={paragraph} />
       <ol className={blogStyles.posts}>
-        {data.allContentfulBlogPost.edges.map((edge, index) => {
+        {data.allContentfulBlogPost.edges.map((edge) => {
+          const image = getImage(edge.node.image.gatsbyImageData)
           return (
-            <li key={index} className={blogStyles.post}>
+            <li className={blogStyles.post} key={edge.node.slug + Math.random()}>
               <Link to={`/blog/${edge.node.slug}`}>
                 <aside className={blogStyles.aside}>
                   <h2>{edge.node.title}</h2>
@@ -51,14 +50,7 @@ const blogList = ({ data, pageContext }) => {
                 </aside>
                 {edge.node.image && (
                   <div className={blogStyles.imageWrapper}>
-                    <Img
-                      imgStyle={{
-                        objectFit: "contain",
-                      }}
-                      fluid={edge.node.image.fluid}
-                      alt="thumbnail"
-                      className={blogStyles.image}
-                    />
+                    <GatsbyImage image={image} alt={edge.node.slug} />
                   </div>
                 )}
               </Link>

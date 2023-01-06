@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import footerStyles from "./footer.module.scss"
+import * as footerStyles from "./footer.module.scss"
 import linkedin from "../../static/linkedin.png"
 import github from "../../static/github.png"
 import twitter from "../../static/twitter.png"

@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
-import SEO from "../components/SEO"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Seo from "../components/SEO"
 import ContentHeader from "../components/ContentHeader"
 import Pager from "../components/Pager"
 
-import readingStyles from "./readingList.module.scss"
+import * as readingStyles from "./readingList.module.scss"
 
 export const blogListQuery = graphql`
   query($skip: Int!, $limit: Int!) {
@@ -21,9 +21,7 @@ export const blogListQuery = graphql`
           linkedDate(formatString: "MMMM Do, YYYY")
           link
           thumbnail {
-            fluid(maxWidth: 800, quality: 90) {
-              ...GatsbyContentfulFluid_withWebp
-            }
+            gatsbyImageData(quality: 90, width: 800)
           }
         }
       }
@@ -37,13 +35,14 @@ const readingList = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <SEO title="Reading Posts" />
+      <Seo title="Reading Posts" />
       <ContentHeader title={title} paragraph={paragraph} />
 
       <ol className={readingStyles.posts}>
-        {data.allContentfulReadingPost.edges.map((edge, index) => {
+        {data.allContentfulReadingPost.edges.map((edge) => {
+          const thumbnail = getImage(edge.node.thumbnail.gatsbyImageData)
           return (
-            <li key={index} className={readingStyles.post}>
+            <li className={readingStyles.post} key={edge.node.article}>
               <a
                 href={edge.node.link}
                 target="_blank"
@@ -55,14 +54,7 @@ const readingList = ({ data, pageContext }) => {
                 </aside>
                 {edge.node.thumbnail && (
                   <div className={readingStyles.imageWrapper}>
-                    <Img
-                      imgStyle={{
-                        objectFit: "contain",
-                      }}
-                      fluid={edge.node.thumbnail.fluid}
-                      alt="thumbnail"
-                      className={readingStyles.image}
-                    />
+                    <GatsbyImage image={thumbnail} alt={edge.node.article} />
                   </div>
                 )}
               </a>

@@ -1,4 +1,6 @@
-require("dotenv").config()
+require("dotenv").config({
+  path: `.env`,
+})
 
 module.exports = {
   siteMetadata: {
@@ -37,15 +39,6 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
-    {
-      resolve: `gatsby-plugin-modal-routing`,
-      options: {
-        modalProps: {
-          overlayClassName: `modalOverlay`,
-          className: `modal`,
-        },
-      },
-    },
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-source-filesystem",
@@ -55,6 +48,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-sharp",
+    "gatsby-plugin-image",
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-transformer-remark",

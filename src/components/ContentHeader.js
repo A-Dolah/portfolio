@@ -1,5 +1,5 @@
 import React from "react"
-import contentHeaderStyles from "./contentHeader.module.scss"
+import * as contentHeaderStyles from "./contentHeader.module.scss"
 
 const ContentHeader = ({ title, paragraph }) => {
   return (
